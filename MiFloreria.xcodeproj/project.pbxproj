@@ -14,6 +14,7 @@
 		87E006702B575D64000DE097 /* MiFloreria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87E0066E2B575D64000DE097 /* MiFloreria.xcdatamodeld */; };
 		87E006722B575D65000DE097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E006712B575D65000DE097 /* Assets.xcassets */; };
 		87E006752B575D65000DE097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E006732B575D65000DE097 /* LaunchScreen.storyboard */; };
+		87E0067E2B575FC7000DE097 /* ProjectUI in Frameworks */ = {isa = PBXBuildFile; productRef = 87E0067D2B575FC7000DE097 /* ProjectUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87E0067E2B575FC7000DE097 /* ProjectUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = MiFloreria;
+			packageProductDependencies = (
+				87E0067D2B575FC7000DE097 /* ProjectUI */,
+			);
 			productName = MiFloreria;
 			productReference = 87E006622B575D64000DE097 /* MiFloreria.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 87E006592B575D64000DE097;
+			packageReferences = (
+				87E0067C2B575FC7000DE097 /* XCRemoteSwiftPackageReference "ProjectUI" */,
+			);
 			productRefGroup = 87E006632B575D64000DE097 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,6 +377,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		87E0067C2B575FC7000DE097 /* XCRemoteSwiftPackageReference "ProjectUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Bodgar10/ProjectUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87E0067D2B575FC7000DE097 /* ProjectUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87E0067C2B575FC7000DE097 /* XCRemoteSwiftPackageReference "ProjectUI" */;
+			productName = ProjectUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		87E0066E2B575D64000DE097 /* MiFloreria.xcdatamodeld */ = {

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "projectui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Bodgar10/ProjectUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cfc18bb3b5dc0e3f1dbbc98501048fe2866a1f7b"
+      }
+    }
+  ],
+  "version" : 2
+}
