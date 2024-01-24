@@ -12,8 +12,11 @@ class PrimaryButton: UIView {
     
     // MARK: Private UI
     
-    private let primaryButton: DSButton = {
-        let button = DSButton(style: primary)
+    private let primaryButton: UIButton = {
+        let button = UIButton()
+        
+        
+        
         return button
     }()
 

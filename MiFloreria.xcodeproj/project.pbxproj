@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
+		8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
+		8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A0922B60A4B000349AB7 /* DSButton.swift */; };
+		8794A0952B60A57900349AB7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8794A0942B60A57900349AB7 /* Colors.xcassets */; };
+		8794A0982B60A66B00349AB7 /* DemoButtonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A0972B60A66B00349AB7 /* DemoButtonsTableViewController.swift */; };
+		8794A0992B60A67F00349AB7 /* DemoButtonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A0972B60A66B00349AB7 /* DemoButtonsTableViewController.swift */; };
+		8794A09A2B60A69200349AB7 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A0922B60A4B000349AB7 /* DSButton.swift */; };
+		8794A09B2B60A6D700349AB7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8794A0942B60A57900349AB7 /* Colors.xcassets */; };
+		8794A09D2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A09C2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift */; };
+		8794A09E2B60A8DD00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A09C2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift */; };
+		8794A0A02B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A09F2B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift */; };
+		8794A0A12B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A09F2B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift */; };
 		87A968A82B59F7DF00FF54B9 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006822B576A9C000DE097 /* DemoTableViewController.swift */; };
 		87A968A92B59F7DF00FF54B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006692B575D64000DE097 /* ViewController.swift */; };
 		87A968AA2B59F7DF00FF54B9 /* MiFloreria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87E0066E2B575D64000DE097 /* MiFloreria.xcdatamodeld */; };
@@ -32,6 +44,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8794A08F2B60A45000349AB7 /* DemoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUI.swift; sourceTree = "<group>"; };
+		8794A0922B60A4B000349AB7 /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
+		8794A0942B60A57900349AB7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8794A0972B60A66B00349AB7 /* DemoButtonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoButtonsTableViewController.swift; sourceTree = "<group>"; };
+		8794A09C2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTableViewCell.swift; sourceTree = "<group>"; };
+		8794A09F2B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTableViewCell.swift; sourceTree = "<group>"; };
 		87A968B62B59F7DF00FF54B9 /* DemoUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIControl.swift"; sourceTree = "<group>"; };
@@ -67,10 +85,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8794A0962B60A64D00349AB7 /* DemoButtons */ = {
+			isa = PBXGroup;
+			children = (
+				8794A0972B60A66B00349AB7 /* DemoButtonsTableViewController.swift */,
+				8794A09C2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift */,
+				8794A09F2B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift */,
+			);
+			path = DemoButtons;
+			sourceTree = "<group>";
+		};
 		87A968B82B5A018500FF54B9 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
 				87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */,
+				8794A0922B60A4B000349AB7 /* DSButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -79,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				87A968B82B5A018500FF54B9 /* Buttons */,
+				8794A0942B60A57900349AB7 /* Colors.xcassets */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -129,7 +159,9 @@
 		87E006812B576A80000DE097 /* AppUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8794A0962B60A64D00349AB7 /* DemoButtons */,
 				87E006822B576A9C000DE097 /* DemoTableViewController.swift */,
+				8794A08F2B60A45000349AB7 /* DemoUI.swift */,
 			);
 			path = AppUIDemo;
 			sourceTree = "<group>";
@@ -220,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87A968B02B59F7DF00FF54B9 /* LaunchScreen.storyboard in Resources */,
+				8794A09B2B60A6D700349AB7 /* Colors.xcassets in Resources */,
 				87A968B12B59F7DF00FF54B9 /* Assets.xcassets in Resources */,
 				87A968B22B59F7DF00FF54B9 /* Main.storyboard in Resources */,
 			);
@@ -230,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87E006752B575D65000DE097 /* LaunchScreen.storyboard in Resources */,
+				8794A0952B60A57900349AB7 /* Colors.xcassets in Resources */,
 				87E006722B575D65000DE097 /* Assets.xcassets in Resources */,
 				87E0066D2B575D64000DE097 /* Main.storyboard in Resources */,
 			);
@@ -244,10 +278,15 @@
 			files = (
 				87A968BC2B5A043800FF54B9 /* PrimaryButton.swift in Sources */,
 				87A968A82B59F7DF00FF54B9 /* DemoTableViewController.swift in Sources */,
+				8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */,
+				8794A09E2B60A8DD00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */,
+				8794A0A12B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift in Sources */,
 				87A968A92B59F7DF00FF54B9 /* ViewController.swift in Sources */,
 				87A968AA2B59F7DF00FF54B9 /* MiFloreria.xcdatamodeld in Sources */,
 				87A968AB2B59F7DF00FF54B9 /* AppDelegate.swift in Sources */,
+				8794A09A2B60A69200349AB7 /* DSButton.swift in Sources */,
 				87A968AC2B59F7DF00FF54B9 /* SceneDelegate.swift in Sources */,
+				8794A0992B60A67F00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
 				87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,10 +297,15 @@
 			files = (
 				87A968BA2B5A01AD00FF54B9 /* PrimaryButton.swift in Sources */,
 				87E006832B576A9C000DE097 /* DemoTableViewController.swift in Sources */,
+				8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */,
+				8794A09D2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */,
+				8794A0A02B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift in Sources */,
 				87E0066A2B575D64000DE097 /* ViewController.swift in Sources */,
+				8794A0982B60A66B00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
 				87E006702B575D64000DE097 /* MiFloreria.xcdatamodeld in Sources */,
 				87E006662B575D64000DE097 /* AppDelegate.swift in Sources */,
 				87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */,
+				8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */,
 				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
