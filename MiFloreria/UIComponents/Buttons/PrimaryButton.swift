@@ -6,15 +6,36 @@
 //
 
 import UIKit
+import Combine
 
 class PrimaryButton: UIView {
+    
+    // MARK: Private UI
+    
+    private let primaryButton: DSButton = {
+        let button = DSButton(style: primary)
+        return button
+    }()
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // MARK: Public Variables
+    
+    var buttonTapPublisher: AnyPublisher<Void, Never> {
+        return primaryButton.publisher(for: .touchUpInside)
+            .map { _ in () }
+            .eraseToAnyPublisher()
     }
-    */
-
+    
+    // MARK: Public initializers
+    
+    convenience init(title: String, backgroundColor: UIColor = .systemPink) {
+        self.init(frame: .zero)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }

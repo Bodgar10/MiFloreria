@@ -16,6 +16,10 @@
 		87A968B02B59F7DF00FF54B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E006732B575D65000DE097 /* LaunchScreen.storyboard */; };
 		87A968B12B59F7DF00FF54B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E006712B575D65000DE097 /* Assets.xcassets */; };
 		87A968B22B59F7DF00FF54B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E0066B2B575D64000DE097 /* Main.storyboard */; };
+		87A968BA2B5A01AD00FF54B9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */; };
+		87A968BC2B5A043800FF54B9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */; };
+		87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */; };
+		87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */; };
 		87E006662B575D64000DE097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006652B575D64000DE097 /* AppDelegate.swift */; };
 		87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006672B575D64000DE097 /* SceneDelegate.swift */; };
 		87E0066A2B575D64000DE097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006692B575D64000DE097 /* ViewController.swift */; };
@@ -28,9 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		87A968A32B59F54500FF54B9 /* MiFloreria copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MiFloreria copy-Info.plist"; path = "/Users/bodgarespinosamiranda/Documents/CURSOS_GRUPOS/SEMANA/MiFloreria/MiFloreria copy-Info.plist"; sourceTree = "<absolute>"; };
 		87A968B62B59F7DF00FF54B9 /* DemoUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		87A968B72B59F7DF00FF54B9 /* MiFloreria copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MiFloreria copy2-Info.plist"; path = "/Users/bodgarespinosamiranda/Documents/CURSOS_GRUPOS/SEMANA/MiFloreria/MiFloreria copy2-Info.plist"; sourceTree = "<absolute>"; };
+		87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIControl.swift"; sourceTree = "<group>"; };
 		87E006622B575D64000DE097 /* MiFloreria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiFloreria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E006652B575D64000DE097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87E006672B575D64000DE097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,13 +67,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87A968B82B5A018500FF54B9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		87A968BB2B5A01B800FF54B9 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				87A968B82B5A018500FF54B9 /* Buttons */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		87A968BD2B5A08D500FF54B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		87E006592B575D64000DE097 = {
 			isa = PBXGroup;
 			children = (
 				87E006642B575D64000DE097 /* MiFloreria */,
 				87E006632B575D64000DE097 /* Products */,
-				87A968A32B59F54500FF54B9 /* MiFloreria copy-Info.plist */,
-				87A968B72B59F7DF00FF54B9 /* MiFloreria copy2-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +111,8 @@
 		87E006642B575D64000DE097 /* MiFloreria */ = {
 			isa = PBXGroup;
 			children = (
+				87A968BD2B5A08D500FF54B9 /* Extensions */,
+				87A968BB2B5A01B800FF54B9 /* UIComponents */,
 				87E006812B576A80000DE097 /* AppUIDemo */,
 				87E006652B575D64000DE097 /* AppDelegate.swift */,
 				87E006672B575D64000DE097 /* SceneDelegate.swift */,
@@ -214,11 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A968BC2B5A043800FF54B9 /* PrimaryButton.swift in Sources */,
 				87A968A82B59F7DF00FF54B9 /* DemoTableViewController.swift in Sources */,
 				87A968A92B59F7DF00FF54B9 /* ViewController.swift in Sources */,
 				87A968AA2B59F7DF00FF54B9 /* MiFloreria.xcdatamodeld in Sources */,
 				87A968AB2B59F7DF00FF54B9 /* AppDelegate.swift in Sources */,
 				87A968AC2B59F7DF00FF54B9 /* SceneDelegate.swift in Sources */,
+				87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,11 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A968BA2B5A01AD00FF54B9 /* PrimaryButton.swift in Sources */,
 				87E006832B576A9C000DE097 /* DemoTableViewController.swift in Sources */,
 				87E0066A2B575D64000DE097 /* ViewController.swift in Sources */,
 				87E006702B575D64000DE097 /* MiFloreria.xcdatamodeld in Sources */,
 				87E006662B575D64000DE097 /* AppDelegate.swift in Sources */,
 				87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */,
+				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
