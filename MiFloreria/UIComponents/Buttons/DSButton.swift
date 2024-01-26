@@ -5,8 +5,9 @@
 //  Created by Bodgar Espinosa Miranda on 23/01/24.
 //
 
-import UIKit
+import Combine
 import ProjectUI
+import UIKit
 
 final class DSButton: UIButton {
     enum ButtonStyle {
@@ -17,6 +18,12 @@ final class DSButton: UIButton {
     init(style: ButtonStyle) {
         super.init(frame: .zero)
         configureButton(with: style)
+    }
+    
+    var didTap: AnyPublisher<Void, Never> {
+        return self.publisher(for: .touchUpInside)
+            .map { _ in () }
+            .eraseToAnyPublisher()
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +43,10 @@ final class DSButton: UIButton {
         backgroundColor = UIColor.dsPrimary
         titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         layer.cornerRadius = 5
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 4
     }
     
     private func configureSecondaryButton() {

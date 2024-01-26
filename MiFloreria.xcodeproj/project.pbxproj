@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873DDD2C2B6341A5003D026A /* HomeViewController.swift */; };
+		873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873DDD2C2B6341A5003D026A /* HomeViewController.swift */; };
 		8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
 		8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
 		8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A0922B60A4B000349AB7 /* DSButton.swift */; };
@@ -28,8 +30,6 @@
 		87A968B02B59F7DF00FF54B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E006732B575D65000DE097 /* LaunchScreen.storyboard */; };
 		87A968B12B59F7DF00FF54B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E006712B575D65000DE097 /* Assets.xcassets */; };
 		87A968B22B59F7DF00FF54B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E0066B2B575D64000DE097 /* Main.storyboard */; };
-		87A968BA2B5A01AD00FF54B9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */; };
-		87A968BC2B5A043800FF54B9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */; };
 		87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */; };
 		87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */; };
 		87E006662B575D64000DE097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006652B575D64000DE097 /* AppDelegate.swift */; };
@@ -44,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		873DDD2C2B6341A5003D026A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8794A08F2B60A45000349AB7 /* DemoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUI.swift; sourceTree = "<group>"; };
 		8794A0922B60A4B000349AB7 /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
 		8794A0942B60A57900349AB7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		8794A09C2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonTableViewCell.swift; sourceTree = "<group>"; };
 		8794A09F2B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTableViewCell.swift; sourceTree = "<group>"; };
 		87A968B62B59F7DF00FF54B9 /* DemoUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIControl.swift"; sourceTree = "<group>"; };
 		87E006622B575D64000DE097 /* MiFloreria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiFloreria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E006652B575D64000DE097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +85,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		873DDD282B634162003D026A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				873DDD292B634167003D026A /* LoginFeature */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		873DDD292B634167003D026A /* LoginFeature */ = {
+			isa = PBXGroup;
+			children = (
+				873DDD2A2B634179003D026A /* Home */,
+			);
+			path = LoginFeature;
+			sourceTree = "<group>";
+		};
+		873DDD2A2B634179003D026A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				873DDD2C2B6341A5003D026A /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		8794A0962B60A64D00349AB7 /* DemoButtons */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +122,6 @@
 		87A968B82B5A018500FF54B9 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				87A968B92B5A01AD00FF54B9 /* PrimaryButton.swift */,
 				8794A0922B60A4B000349AB7 /* DSButton.swift */,
 			);
 			path = Buttons;
@@ -141,6 +164,7 @@
 		87E006642B575D64000DE097 /* MiFloreria */ = {
 			isa = PBXGroup;
 			children = (
+				873DDD282B634162003D026A /* Sources */,
 				87A968BD2B5A08D500FF54B9 /* Extensions */,
 				87A968BB2B5A01B800FF54B9 /* UIComponents */,
 				87E006812B576A80000DE097 /* AppUIDemo */,
@@ -276,7 +300,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A968BC2B5A043800FF54B9 /* PrimaryButton.swift in Sources */,
 				87A968A82B59F7DF00FF54B9 /* DemoTableViewController.swift in Sources */,
 				8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */,
 				8794A09E2B60A8DD00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */,
@@ -288,6 +311,7 @@
 				87A968AC2B59F7DF00FF54B9 /* SceneDelegate.swift in Sources */,
 				8794A0992B60A67F00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
 				87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */,
+				873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A968BA2B5A01AD00FF54B9 /* PrimaryButton.swift in Sources */,
 				87E006832B576A9C000DE097 /* DemoTableViewController.swift in Sources */,
 				8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */,
 				8794A09D2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */,
@@ -307,6 +330,7 @@
 				87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */,
 				8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */,
 				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
+				873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

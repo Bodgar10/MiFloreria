@@ -57,7 +57,7 @@ final class DemoUI {
             case .carousels:
                 return ViewController()
             case .homeViewController:
-                return ViewController()
+                return HomeViewController()
             case .phoneViewController:
                 return ViewController()
             case .verifyCodeViewController:

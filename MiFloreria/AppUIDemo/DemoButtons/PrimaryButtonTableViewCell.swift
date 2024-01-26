@@ -10,7 +10,7 @@ import ProjectUI
 
 class PrimaryButtonTableViewCell: UITableViewCell {
 
-    private let primaryButton: DSButton = {
+    public let primaryButton: DSButton = {
         let button = DSButton(style: .primary)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
