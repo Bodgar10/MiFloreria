@@ -11,6 +11,8 @@
 		873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873DDD2C2B6341A5003D026A /* HomeViewController.swift */; };
 		8744EB432B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */; };
 		8744EB442B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */; };
+		8744EB472B6C827E00EA4493 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */; };
+		8744EB482B6C827E00EA4493 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */; };
 		8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
 		8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
 		8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A0922B60A4B000349AB7 /* DSButton.swift */; };
@@ -50,6 +52,7 @@
 /* Begin PBXFileReference section */
 		873DDD2C2B6341A5003D026A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoSignInViewController.swift; sourceTree = "<group>"; };
+		8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		8794A08F2B60A45000349AB7 /* DemoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUI.swift; sourceTree = "<group>"; };
 		8794A0922B60A4B000349AB7 /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
 		8794A0942B60A57900349AB7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */,
+				8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,6 +337,7 @@
 				87A968AA2B59F7DF00FF54B9 /* MiFloreria.xcdatamodeld in Sources */,
 				87A968AB2B59F7DF00FF54B9 /* AppDelegate.swift in Sources */,
 				8794A09A2B60A69200349AB7 /* DSButton.swift in Sources */,
+				8744EB482B6C827E00EA4493 /* Extension+UIColor.swift in Sources */,
 				87A968AC2B59F7DF00FF54B9 /* SceneDelegate.swift in Sources */,
 				8794A0992B60A67F00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
 				B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */,
@@ -354,6 +359,7 @@
 				8794A0982B60A66B00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
 				87E006702B575D64000DE097 /* MiFloreria.xcdatamodeld in Sources */,
 				87E006662B575D64000DE097 /* AppDelegate.swift in Sources */,
+				8744EB472B6C827E00EA4493 /* Extension+UIColor.swift in Sources */,
 				87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */,
 				8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */,
 				B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */,
