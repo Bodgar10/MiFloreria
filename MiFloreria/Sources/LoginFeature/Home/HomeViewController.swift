@@ -87,7 +87,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
+        view.backgroundColor = UIColor(named:"DSBackground")
         setupUI()
 #if DEV
         setupBinding()
