@@ -40,7 +40,7 @@ final class DSButton: UIButton {
     }
     
     private func configurePrimaryButton() {
-        backgroundColor = UIColor.dsPrimary
+        backgroundColor = UIColor(named: "DSPrimary")
         titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         layer.cornerRadius = 5
         layer.shadowColor = UIColor.black.cgColor
@@ -51,6 +51,6 @@ final class DSButton: UIButton {
     
     private func configureSecondaryButton() {
         backgroundColor = .clear
-        setTitleColor(.dsPrimary, for: .normal)
+        setTitleColor(UIColor(named: "DSPrimary"), for: .normal)
     }
 }

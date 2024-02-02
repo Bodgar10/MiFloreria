@@ -28,7 +28,7 @@ class SecondaryButtonTableViewCell: UITableViewCell {
     public func set(title: String) {
         let yourAttributes: [NSAttributedString.Key: Any] = [
              .font: UIFont.systemFont(ofSize: 18),
-             .foregroundColor: UIColor.dsPrimary,
+             .foregroundColor: UIColor(named: "DSPrimary"),
              .underlineStyle: NSUnderlineStyle.single.rawValue
          ]
         

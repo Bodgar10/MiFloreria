@@ -59,7 +59,7 @@ final class DemoUI {
             case .homeViewController:
                 return HomeViewController()
             case .phoneViewController:
-                return ViewController()
+                return PhoneViewController()
             case .verifyCodeViewController:
                 return ViewController()
             }
