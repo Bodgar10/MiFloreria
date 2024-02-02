@@ -23,6 +23,7 @@ final class DemoUI {
         /// `Section Components`
         case buttons
         case carousels
+        case textFieldWithLine
         
         /// `Section LoginFeature`
         case homeViewController
@@ -42,6 +43,8 @@ final class DemoUI {
                 return "Buttons"
             case .carousels:
                 return "Carousel Collection View"
+            case .textFieldWithLine:
+                return "TextField with line"
             case .homeViewController:
                 return "HomeViewController"
             case .phoneViewController:
@@ -59,6 +62,8 @@ final class DemoUI {
                 return DemoButtonsTableViewController()
             case .carousels:
                 return ViewController()
+            case .textFieldWithLine:
+                return DemoTextFieldWithLineViewController()
             case .homeViewController:
                 return HomeViewController()
             case .phoneViewController:
@@ -77,7 +82,8 @@ final class DemoUI {
         (.components,
          [
             .buttons,
-            .carousels
+            .carousels,
+            .textFieldWithLine
          ]
         ),
         (.loginFeatures,

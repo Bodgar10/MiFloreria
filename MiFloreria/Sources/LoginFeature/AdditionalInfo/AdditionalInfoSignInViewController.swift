@@ -22,12 +22,16 @@ final class AdditionalInfoSignInViewController: UIViewController {
         return label
     }()
     
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.background
         setupUI()
     }
 
+    // MARK: Private functions
+    
     private func setupUI() {
         view.addSubview(titleLabel)
         
