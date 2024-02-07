@@ -41,6 +41,8 @@
 		87E006752B575D65000DE097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E006732B575D65000DE097 /* LaunchScreen.storyboard */; };
 		87E0067E2B575FC7000DE097 /* ProjectUI in Frameworks */ = {isa = PBXBuildFile; productRef = 87E0067D2B575FC7000DE097 /* ProjectUI */; };
 		87E006832B576A9C000DE097 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006822B576A9C000DE097 /* DemoTableViewController.swift */; };
+		B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92ED9412B6C857300BA682B /* PhoneViewController.swift */; };
+		B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92ED9412B6C857300BA682B /* PhoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,7 @@
 		87E006742B575D65000DE097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87E006762B575D65000DE097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87E006822B576A9C000DE097 /* DemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
+		B92ED9412B6C857300BA682B /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,7 @@
 		873DDD292B634167003D026A /* LoginFeature */ = {
 			isa = PBXGroup;
 			children = (
+				B92ED93E2B6C81B700BA682B /* SignIn */,
 				873DDD2A2B634179003D026A /* Home */,
 			);
 			path = LoginFeature;
@@ -188,6 +192,14 @@
 				8794A08F2B60A45000349AB7 /* DemoUI.swift */,
 			);
 			path = AppUIDemo;
+			sourceTree = "<group>";
+		};
+		B92ED93E2B6C81B700BA682B /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B92ED9412B6C857300BA682B /* PhoneViewController.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +322,7 @@
 				8794A09A2B60A69200349AB7 /* DSButton.swift in Sources */,
 				87A968AC2B59F7DF00FF54B9 /* SceneDelegate.swift in Sources */,
 				8794A0992B60A67F00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
+				B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */,
 				87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */,
 				873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */,
 			);
@@ -329,6 +342,7 @@
 				87E006662B575D64000DE097 /* AppDelegate.swift in Sources */,
 				87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */,
 				8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */,
+				B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */,
 				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
 				873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */,
 			);
