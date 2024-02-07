@@ -9,7 +9,7 @@ import Combine
 import UIKit
 import ProjectUI
 
-final class PhoneViewController : UIViewController {
+final class PhoneViewController : MainViewController {
    
    private var cancellables: Set<AnyCancellable> = []
     
@@ -69,7 +69,7 @@ final class PhoneViewController : UIViewController {
    
    private var lineBaseView : UIView = {
        let view = UIView()
-       view.backgroundColor = UIColor(named: "DSGray")
+       view.backgroundColor = DesignSystem.gray
        view.translatesAutoresizingMaskIntoConstraints = false
        return view
    }()
@@ -83,12 +83,15 @@ final class PhoneViewController : UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "DSBackground")
-        setupUI()
+        view.backgroundColor = DesignSystem.background
 #if DEV
         setupBinding()
 #endif
    }
+    
+    public func configure(with title: String) {
+        self.singInLabel.text = title
+    }
    
 #if DEV
     private func setupBinding() {
@@ -99,7 +102,7 @@ final class PhoneViewController : UIViewController {
     }
 #endif
     
-   private func setupUI(){
+    override func setupUI(){
        view.addSubview(singInLabel)
        view.addSubview(phoneStackView)
        view.addSubview(lineBaseView)
@@ -142,11 +145,5 @@ final class PhoneViewController : UIViewController {
            .pin(.top, yAnchor: lineBaseView.bottomAnchor, spacing: .medium)
            .pin(.centerX, to: view)
            .pinSize(to: CGSize(width: 100, height: 45))
-       
-       NSLayoutConstraint.activate([
-           
-
-
-       ])
    }
 }

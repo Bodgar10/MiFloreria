@@ -8,7 +8,7 @@
 import UIKit
 import ProjectUI
 
-final class AdditionalInfoSignInViewController: UIViewController {
+final class AdditionalInfoSignInViewController: MainViewController {
 
     // MARK: Private Components
     
@@ -20,6 +20,15 @@ final class AdditionalInfoSignInViewController: UIViewController {
         label.font = .systemFont(ofSize: 27, weight: .semibold)
         label.adjustsFontSizeToFitWidth = true
         return label
+    }()
+    
+    private let mainStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 8
+        return stackView
     }()
     
     private let fullNameStackView: UIStackView = {
@@ -45,13 +54,33 @@ final class AdditionalInfoSignInViewController: UIViewController {
         return view
     }()
     
+    private let emailTextField: DSLineTF = {
+        let view = DSLineTF()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = true
+        return view
+    }()
+    
+    private let passwordTextField: DSLineTF = {
+        let view = DSLineTF()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = true
+        return view
+    }()
+    
+    private let confirmPasswordTextField: DSLineTF = {
+        let view = DSLineTF()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = true
+        return view
+    }()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.background
         configureTextFields()
-        setupUI()
     }
 
     // MARK: Private functions
@@ -59,11 +88,19 @@ final class AdditionalInfoSignInViewController: UIViewController {
     private func configureTextFields() {
         nameTextField.configure(placeholder: "Nombre")
         lastNameTextField.configure(placeholder: "Apellido")
+        emailTextField.configure(placeholder: "Correo electrónico", keyboardType: .emailAddress)
+        passwordTextField.configure(placeholder: "Contraseña", needsSecurity: true)
+        confirmPasswordTextField.configure(placeholder: "Confirmar contraseña", needsSecurity: true)
     }
     
-    private func setupUI() {
+    override func setupUI() {
         view.addSubview(titleLabel)
-        view.addSubview(fullNameStackView)
+        view.addSubview(mainStackView)
+        
+        mainStackView.addArrangedSubview(fullNameStackView)
+        mainStackView.addArrangedSubview(emailTextField)
+        mainStackView.addArrangedSubview(passwordTextField)
+        mainStackView.addArrangedSubview(confirmPasswordTextField)
         
         fullNameStackView.addArrangedSubview(nameTextField)
         fullNameStackView.addArrangedSubview(lastNameTextField)
@@ -73,8 +110,8 @@ final class AdditionalInfoSignInViewController: UIViewController {
             .pin(.leading, to: view.layoutMarginsGuide, spacing: .medium)
             .pin(.trailing, to: view.layoutMarginsGuide, spacing: -.medium)
         
-        fullNameStackView
-            .pinSize(to: CGSize(width: 0, height: 50))
+        mainStackView
+            .pinSize(to: CGSize(width: 0, height: view.frame.height * 0.30))
             .pin(.top, yAnchor: titleLabel.bottomAnchor, offset: 50)
             .pin(.trailing, to: view, spacing: -.xLarge)
             .pin(.leading, to: view, spacing: .xLarge)

@@ -22,7 +22,7 @@ final class DSLineTF: UIView {
     
     private let lineBaseView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = DesignSystem.gray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -75,6 +75,7 @@ final class DSLineTF: UIView {
 
 extension DSLineTF: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        endEditing(true)
         return true
     }
 }

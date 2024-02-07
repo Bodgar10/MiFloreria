@@ -9,7 +9,7 @@ import Combine
 import UIKit
 import ProjectUI
 
-class HomeViewController: UIViewController {
+class HomeViewController: MainViewController {
 
     // MARK: Private variables
     
@@ -87,8 +87,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named:"DSBackground")
-        setupUI()
+        view.backgroundColor = DesignSystem.background
 #if DEV
         setupBinding()
 #endif
@@ -98,19 +97,22 @@ class HomeViewController: UIViewController {
     
 #if DEV
     private func setupBinding() {
-        logInButton.didTap.sink { _ in
-            // TODO: Send to the loginView
+        logInButton.didTap.sink { [weak self] in
+            let phoneController = PhoneViewController()
+            phoneController.configure(with: "Entrar")
+            self?.navigationController?.pushViewController(phoneController, animated: true)
         }
         .store(in: &cancellables)
         
-        signInButton.didTap.sink { _ in
-            // TODO: Send to the signInView
+        signInButton.didTap.sink { [weak self] in
+            let phoneController = PhoneViewController()
+            self?.navigationController?.pushViewController(phoneController, animated: true)
         }
         .store(in: &cancellables)
     }
 #endif
     
-    private func setupUI() {
+    override func setupUI() {
         view.addSubview(logoImage)
         view.addSubview(mainStackView)
         

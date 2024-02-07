@@ -17,6 +17,8 @@
 		8744EB4C2B6C857600EA4493 /* DSLineTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB4A2B6C857600EA4493 /* DSLineTF.swift */; };
 		8744EB4F2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB4E2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift */; };
 		8744EB502B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB4E2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift */; };
+		8750B3112B73178600D84A8E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B3102B73178600D84A8E /* MainViewController.swift */; };
+		8750B3122B73178900D84A8E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B3102B73178600D84A8E /* MainViewController.swift */; };
 		8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
 		8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
 		8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A0922B60A4B000349AB7 /* DSButton.swift */; };
@@ -59,6 +61,7 @@
 		8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		8744EB4A2B6C857600EA4493 /* DSLineTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLineTF.swift; sourceTree = "<group>"; };
 		8744EB4E2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTextFieldWithLineViewController.swift; sourceTree = "<group>"; };
+		8750B3102B73178600D84A8E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8794A08F2B60A45000349AB7 /* DemoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUI.swift; sourceTree = "<group>"; };
 		8794A0922B60A4B000349AB7 /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
 		8794A0942B60A57900349AB7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		873DDD282B634162003D026A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8750B30F2B73177B00D84A8E /* General */,
 				873DDD292B634167003D026A /* LoginFeature */,
 			);
 			path = Sources;
@@ -148,6 +152,14 @@
 				8744EB4E2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift */,
 			);
 			path = DemoTextFields;
+			sourceTree = "<group>";
+		};
+		8750B30F2B73177B00D84A8E /* General */ = {
+			isa = PBXGroup;
+			children = (
+				8750B3102B73178600D84A8E /* MainViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		8794A0962B60A64D00349AB7 /* DemoButtons */ = {
@@ -367,6 +379,7 @@
 				8744EB502B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */,
 				8794A0992B60A67F00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
 				B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */,
+				8750B3122B73178900D84A8E /* MainViewController.swift in Sources */,
 				87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */,
 				873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */,
 			);
@@ -391,6 +404,7 @@
 				8744EB4F2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */,
 				8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */,
 				B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */,
+				8750B3112B73178600D84A8E /* MainViewController.swift in Sources */,
 				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
 				873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */,
 			);
