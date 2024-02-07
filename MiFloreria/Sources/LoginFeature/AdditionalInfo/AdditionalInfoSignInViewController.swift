@@ -75,6 +75,22 @@ final class AdditionalInfoSignInViewController: MainViewController {
         return view
     }()
     
+    private let signInButton: DSButton = {
+        let button = DSButton(style: .primary)
+        button.setTitle("Registrarse", for: .normal)
+        return button
+    }()
+    
+    private let disclaimerLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Al registrarse, confirmas que aceptas nuestras condiciones de uso y nuestra política de publicidad."
+        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -96,6 +112,8 @@ final class AdditionalInfoSignInViewController: MainViewController {
     override func setupUI() {
         view.addSubview(titleLabel)
         view.addSubview(mainStackView)
+        view.addSubview(signInButton)
+        view.addSubview(disclaimerLabel)
         
         mainStackView.addArrangedSubview(fullNameStackView)
         mainStackView.addArrangedSubview(emailTextField)
@@ -115,5 +133,15 @@ final class AdditionalInfoSignInViewController: MainViewController {
             .pin(.top, yAnchor: titleLabel.bottomAnchor, offset: 50)
             .pin(.trailing, to: view, spacing: -.xLarge)
             .pin(.leading, to: view, spacing: .xLarge)
+        
+        signInButton
+            .pin(.centerX, to: view.centerXAnchor)
+            .pinSize(to: CGSize(width: 200, height: 50))
+            .pin(.top, yAnchor: mainStackView.bottomAnchor, spacing: .xLarge)
+        
+        disclaimerLabel
+            .pin(.top, yAnchor: signInButton.bottomAnchor, spacing: .xLarge)
+            .pin(.trailing, to: view, spacing: -.medium)
+            .pin(.leading, to: view, spacing: .medium)
     }
 }
