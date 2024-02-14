@@ -100,12 +100,14 @@ class HomeViewController: MainViewController {
         logInButton.didTap.sink { [weak self] in
             let phoneController = PhoneViewController()
             phoneController.configure(with: "Entrar")
+            phoneController.viewModel = SignInViewModel()
             self?.navigationController?.pushViewController(phoneController, animated: true)
         }
         .store(in: &cancellables)
         
         signInButton.didTap.sink { [weak self] in
             let phoneController = PhoneViewController()
+            phoneController.viewModel = SignInViewModel()
             self?.navigationController?.pushViewController(phoneController, animated: true)
         }
         .store(in: &cancellables)

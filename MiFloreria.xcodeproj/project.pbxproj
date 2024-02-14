@@ -51,6 +51,8 @@
 		871EABE82B75B4950084366B /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 871EABE72B75B4950084366B /* FirebaseRemoteConfigSwift */; };
 		871EABEA2B75B4950084366B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 871EABE92B75B4950084366B /* FirebaseStorage */; };
 		871EABEC2B75B4950084366B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 871EABEB2B75B4950084366B /* FirebaseStorageCombine-Community */; };
+		871EABEE2B75B6A30084366B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EABED2B75B6A30084366B /* SignInViewModel.swift */; };
+		871EABEF2B75B6A30084366B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EABED2B75B6A30084366B /* SignInViewModel.swift */; };
 		873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873DDD2C2B6341A5003D026A /* HomeViewController.swift */; };
 		873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873DDD2C2B6341A5003D026A /* HomeViewController.swift */; };
 		8744EB432B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */; };
@@ -103,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		871EAB942B75B33B0084366B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		871EABED2B75B6A30084366B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		873DDD2C2B6341A5003D026A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoSignInViewController.swift; sourceTree = "<group>"; };
 		8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
@@ -358,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				B92ED9412B6C857300BA682B /* PhoneViewController.swift */,
+				871EABED2B75B6A30084366B /* SignInViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -520,6 +524,7 @@
 				87A968A82B59F7DF00FF54B9 /* DemoTableViewController.swift in Sources */,
 				8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */,
 				8794A09E2B60A8DD00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */,
+				871EABEF2B75B6A30084366B /* SignInViewModel.swift in Sources */,
 				8794A0A12B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift in Sources */,
 				8744EB442B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */,
 				87A968A92B59F7DF00FF54B9 /* ViewController.swift in Sources */,
@@ -546,6 +551,7 @@
 				87E006832B576A9C000DE097 /* DemoTableViewController.swift in Sources */,
 				8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */,
 				8794A09D2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */,
+				871EABEE2B75B6A30084366B /* SignInViewModel.swift in Sources */,
 				8794A0A02B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift in Sources */,
 				8744EB432B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */,
 				87E0066A2B575D64000DE097 /* ViewController.swift in Sources */,
