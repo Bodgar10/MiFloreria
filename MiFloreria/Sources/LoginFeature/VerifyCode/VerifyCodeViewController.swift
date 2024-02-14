@@ -1,16 +1,16 @@
 //
-//  ViewController.swift
+//  VerifyCodeViewController.swift
 //  MiFloreria
 //
-//  Created by Bodgar Espinosa Miranda on 16/01/24.
+//  Created by Bodgar Espinosa Miranda on 13/02/24.
 //
 
 import Combine
 import ProjectUI
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
-    
+class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
+
     private var codetextFiels: [UITextField] = []
     
     private var cancellables: Set<AnyCancellable> = []
@@ -77,7 +77,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.background
-        setupUI()
 #if DEV
         setupBinding()
 #endif
@@ -108,7 +107,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 #endif
     
-    private func setupUI(){
+    override func setupUI(){
         view.addSubview(titleLabel)
         view.addSubview(codeStackView)
         view.addSubview(buttonsStackView)
@@ -172,5 +171,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
    
-}
 
+}

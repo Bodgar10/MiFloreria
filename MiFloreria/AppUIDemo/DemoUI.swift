@@ -69,7 +69,9 @@ final class DemoUI {
             case .phoneViewController:
                 return PhoneViewController()
             case .verifyCodeViewController:
-                return ViewController()
+                let viewController = VerifyCodeViewController()
+                viewController.configure(with: "+525527149106", verificationId: "")
+                return viewController
             case .additionalInformationViewController:
                 return AdditionalInfoSignInViewController()
             }

@@ -53,4 +53,18 @@ final class DSButton: UIButton {
         backgroundColor = .clear
         setTitleColor(DesignSystem.primary, for: .normal)
     }
+    
+    public func setTitle(with title: String) {
+        let yourAttributes: [NSAttributedString.Key: Any] = [
+             .font: UIFont.systemFont(ofSize: 18),
+             .foregroundColor: DesignSystem.primary ?? .blue,
+             .underlineStyle: NSUnderlineStyle.single.rawValue
+         ]
+        
+        let attributeString = NSMutableAttributedString(
+            string: title,
+            attributes: yourAttributes
+        )
+        setAttributedTitle(attributeString, for: .normal)
+    }
 }
