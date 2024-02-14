@@ -42,6 +42,8 @@
 		87A968B22B59F7DF00FF54B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E0066B2B575D64000DE097 /* Main.storyboard */; };
 		87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */; };
 		87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */; };
+		87D03C1C2B7C4E0300096D42 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D03C1B2B7C4E0300096D42 /* VerifyCodeViewController.swift */; };
+		87D03C1D2B7C4E0300096D42 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D03C1B2B7C4E0300096D42 /* VerifyCodeViewController.swift */; };
 		87E006662B575D64000DE097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006652B575D64000DE097 /* AppDelegate.swift */; };
 		87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006672B575D64000DE097 /* SceneDelegate.swift */; };
 		87E0066A2B575D64000DE097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006692B575D64000DE097 /* ViewController.swift */; };
@@ -70,6 +72,7 @@
 		8794A09F2B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTableViewCell.swift; sourceTree = "<group>"; };
 		87A968B62B59F7DF00FF54B9 /* DemoUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIControl.swift"; sourceTree = "<group>"; };
+		87D03C1B2B7C4E0300096D42 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
 		87E006622B575D64000DE097 /* MiFloreria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiFloreria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E006652B575D64000DE097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87E006672B575D64000DE097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,8 +118,9 @@
 		873DDD292B634167003D026A /* LoginFeature */ = {
 			isa = PBXGroup;
 			children = (
-				B92ED93E2B6C81B700BA682B /* SignIn */,
 				873DDD2A2B634179003D026A /* Home */,
+				B92ED93E2B6C81B700BA682B /* SignIn */,
+				87D03C1A2B7C4D9C00096D42 /* VerifyCode */,
 				8744EB412B6C810600EA4493 /* AdditionalInfo */,
 			);
 			path = LoginFeature;
@@ -197,6 +201,14 @@
 				8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		87D03C1A2B7C4D9C00096D42 /* VerifyCode */ = {
+			isa = PBXGroup;
+			children = (
+				87D03C1B2B7C4E0300096D42 /* VerifyCodeViewController.swift */,
+			);
+			path = VerifyCode;
 			sourceTree = "<group>";
 		};
 		87E006592B575D64000DE097 = {
@@ -378,6 +390,7 @@
 				87A968AC2B59F7DF00FF54B9 /* SceneDelegate.swift in Sources */,
 				8744EB502B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */,
 				8794A0992B60A67F00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
+				87D03C1D2B7C4E0300096D42 /* VerifyCodeViewController.swift in Sources */,
 				B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */,
 				8750B3122B73178900D84A8E /* MainViewController.swift in Sources */,
 				87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */,
@@ -403,6 +416,7 @@
 				87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */,
 				8744EB4F2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */,
 				8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */,
+				87D03C1C2B7C4E0300096D42 /* VerifyCodeViewController.swift in Sources */,
 				B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */,
 				8750B3112B73178600D84A8E /* MainViewController.swift in Sources */,
 				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
