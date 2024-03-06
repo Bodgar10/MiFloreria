@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873DDD2C2B6341A5003D026A /* HomeViewController.swift */; };
 		873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873DDD2C2B6341A5003D026A /* HomeViewController.swift */; };
+		8744EB432B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */; };
+		8744EB442B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */; };
+		8744EB472B6C827E00EA4493 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */; };
+		8744EB482B6C827E00EA4493 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */; };
+		8744EB4B2B6C857600EA4493 /* DSLineTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB4A2B6C857600EA4493 /* DSLineTF.swift */; };
+		8744EB4C2B6C857600EA4493 /* DSLineTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB4A2B6C857600EA4493 /* DSLineTF.swift */; };
+		8744EB4F2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB4E2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift */; };
+		8744EB502B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744EB4E2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift */; };
+		8750B3112B73178600D84A8E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B3102B73178600D84A8E /* MainViewController.swift */; };
+		8750B3122B73178900D84A8E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B3102B73178600D84A8E /* MainViewController.swift */; };
 		8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
 		8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A08F2B60A45000349AB7 /* DemoUI.swift */; };
 		8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794A0922B60A4B000349AB7 /* DSButton.swift */; };
@@ -32,6 +42,8 @@
 		87A968B22B59F7DF00FF54B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E0066B2B575D64000DE097 /* Main.storyboard */; };
 		87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */; };
 		87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */; };
+		87D03C1C2B7C4E0300096D42 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D03C1B2B7C4E0300096D42 /* VerifyCodeViewController.swift */; };
+		87D03C1D2B7C4E0300096D42 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D03C1B2B7C4E0300096D42 /* VerifyCodeViewController.swift */; };
 		87E006662B575D64000DE097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006652B575D64000DE097 /* AppDelegate.swift */; };
 		87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006672B575D64000DE097 /* SceneDelegate.swift */; };
 		87E0066A2B575D64000DE097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006692B575D64000DE097 /* ViewController.swift */; };
@@ -43,10 +55,17 @@
 		87E006832B576A9C000DE097 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006822B576A9C000DE097 /* DemoTableViewController.swift */; };
 		B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92ED9412B6C857300BA682B /* PhoneViewController.swift */; };
 		B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92ED9412B6C857300BA682B /* PhoneViewController.swift */; };
+		D1B054152B7E9B7700A6A7E8 /* RecoveryPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B054142B7E9B7700A6A7E8 /* RecoveryPassViewController.swift */; };
+		D1B054162B7E9B7700A6A7E8 /* RecoveryPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B054142B7E9B7700A6A7E8 /* RecoveryPassViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		873DDD2C2B6341A5003D026A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoSignInViewController.swift; sourceTree = "<group>"; };
+		8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		8744EB4A2B6C857600EA4493 /* DSLineTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLineTF.swift; sourceTree = "<group>"; };
+		8744EB4E2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTextFieldWithLineViewController.swift; sourceTree = "<group>"; };
+		8750B3102B73178600D84A8E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8794A08F2B60A45000349AB7 /* DemoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUI.swift; sourceTree = "<group>"; };
 		8794A0922B60A4B000349AB7 /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
 		8794A0942B60A57900349AB7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -55,6 +74,7 @@
 		8794A09F2B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonTableViewCell.swift; sourceTree = "<group>"; };
 		87A968B62B59F7DF00FF54B9 /* DemoUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIControl.swift"; sourceTree = "<group>"; };
+		87D03C1B2B7C4E0300096D42 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
 		87E006622B575D64000DE097 /* MiFloreria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiFloreria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E006652B575D64000DE097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87E006672B575D64000DE097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +86,7 @@
 		87E006762B575D65000DE097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87E006822B576A9C000DE097 /* DemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
 		B92ED9412B6C857300BA682B /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		D1B054142B7E9B7700A6A7E8 /* RecoveryPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPassViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +112,7 @@
 		873DDD282B634162003D026A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8750B30F2B73177B00D84A8E /* General */,
 				873DDD292B634167003D026A /* LoginFeature */,
 			);
 			path = Sources;
@@ -99,8 +121,11 @@
 		873DDD292B634167003D026A /* LoginFeature */ = {
 			isa = PBXGroup;
 			children = (
-				B92ED93E2B6C81B700BA682B /* SignIn */,
+				D1B0540F2B7E801900A6A7E8 /* RecoveryPassViewController */,
 				873DDD2A2B634179003D026A /* Home */,
+				B92ED93E2B6C81B700BA682B /* SignIn */,
+				87D03C1A2B7C4D9C00096D42 /* VerifyCode */,
+				8744EB412B6C810600EA4493 /* AdditionalInfo */,
 			);
 			path = LoginFeature;
 			sourceTree = "<group>";
@@ -111,6 +136,38 @@
 				873DDD2C2B6341A5003D026A /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8744EB412B6C810600EA4493 /* AdditionalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */,
+			);
+			path = AdditionalInfo;
+			sourceTree = "<group>";
+		};
+		8744EB492B6C850600EA4493 /* Textfields */ = {
+			isa = PBXGroup;
+			children = (
+				8744EB4A2B6C857600EA4493 /* DSLineTF.swift */,
+			);
+			path = Textfields;
+			sourceTree = "<group>";
+		};
+		8744EB4D2B6C874800EA4493 /* DemoTextFields */ = {
+			isa = PBXGroup;
+			children = (
+				8744EB4E2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift */,
+			);
+			path = DemoTextFields;
+			sourceTree = "<group>";
+		};
+		8750B30F2B73177B00D84A8E /* General */ = {
+			isa = PBXGroup;
+			children = (
+				8750B3102B73178600D84A8E /* MainViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		8794A0962B60A64D00349AB7 /* DemoButtons */ = {
@@ -134,6 +191,7 @@
 		87A968BB2B5A01B800FF54B9 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				8744EB492B6C850600EA4493 /* Textfields */,
 				87A968B82B5A018500FF54B9 /* Buttons */,
 				8794A0942B60A57900349AB7 /* Colors.xcassets */,
 			);
@@ -144,8 +202,17 @@
 			isa = PBXGroup;
 			children = (
 				87A968BE2B5A08E700FF54B9 /* Extension+UIControl.swift */,
+				8744EB462B6C827E00EA4493 /* Extension+UIColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		87D03C1A2B7C4D9C00096D42 /* VerifyCode */ = {
+			isa = PBXGroup;
+			children = (
+				87D03C1B2B7C4E0300096D42 /* VerifyCodeViewController.swift */,
+			);
+			path = VerifyCode;
 			sourceTree = "<group>";
 		};
 		87E006592B575D64000DE097 = {
@@ -187,6 +254,7 @@
 		87E006812B576A80000DE097 /* AppUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8744EB4D2B6C874800EA4493 /* DemoTextFields */,
 				8794A0962B60A64D00349AB7 /* DemoButtons */,
 				87E006822B576A9C000DE097 /* DemoTableViewController.swift */,
 				8794A08F2B60A45000349AB7 /* DemoUI.swift */,
@@ -200,6 +268,14 @@
 				B92ED9412B6C857300BA682B /* PhoneViewController.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		D1B0540F2B7E801900A6A7E8 /* RecoveryPassViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D1B054142B7E9B7700A6A7E8 /* RecoveryPassViewController.swift */,
+			);
+			path = RecoveryPassViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,13 +392,20 @@
 				8794A0912B60A45C00349AB7 /* DemoUI.swift in Sources */,
 				8794A09E2B60A8DD00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */,
 				8794A0A12B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift in Sources */,
+				D1B054162B7E9B7700A6A7E8 /* RecoveryPassViewController.swift in Sources */,
+				8744EB442B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */,
 				87A968A92B59F7DF00FF54B9 /* ViewController.swift in Sources */,
+				8744EB4C2B6C857600EA4493 /* DSLineTF.swift in Sources */,
 				87A968AA2B59F7DF00FF54B9 /* MiFloreria.xcdatamodeld in Sources */,
 				87A968AB2B59F7DF00FF54B9 /* AppDelegate.swift in Sources */,
 				8794A09A2B60A69200349AB7 /* DSButton.swift in Sources */,
+				8744EB482B6C827E00EA4493 /* Extension+UIColor.swift in Sources */,
 				87A968AC2B59F7DF00FF54B9 /* SceneDelegate.swift in Sources */,
+				8744EB502B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */,
 				8794A0992B60A67F00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
+				87D03C1D2B7C4E0300096D42 /* VerifyCodeViewController.swift in Sources */,
 				B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */,
+				8750B3122B73178900D84A8E /* MainViewController.swift in Sources */,
 				87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */,
 				873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */,
 			);
@@ -336,13 +419,20 @@
 				8794A0902B60A45000349AB7 /* DemoUI.swift in Sources */,
 				8794A09D2B60A73E00349AB7 /* PrimaryButtonTableViewCell.swift in Sources */,
 				8794A0A02B60ADCA00349AB7 /* SecondaryButtonTableViewCell.swift in Sources */,
+				D1B054152B7E9B7700A6A7E8 /* RecoveryPassViewController.swift in Sources */,
+				8744EB432B6C813500EA4493 /* AdditionalInfoSignInViewController.swift in Sources */,
 				87E0066A2B575D64000DE097 /* ViewController.swift in Sources */,
+				8744EB4B2B6C857600EA4493 /* DSLineTF.swift in Sources */,
 				8794A0982B60A66B00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
 				87E006702B575D64000DE097 /* MiFloreria.xcdatamodeld in Sources */,
 				87E006662B575D64000DE097 /* AppDelegate.swift in Sources */,
+				8744EB472B6C827E00EA4493 /* Extension+UIColor.swift in Sources */,
 				87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */,
+				8744EB4F2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */,
 				8794A0932B60A4B000349AB7 /* DSButton.swift in Sources */,
+				87D03C1C2B7C4E0300096D42 /* VerifyCodeViewController.swift in Sources */,
 				B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */,
+				8750B3112B73178600D84A8E /* MainViewController.swift in Sources */,
 				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
 				873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */,
 			);

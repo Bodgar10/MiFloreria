@@ -40,7 +40,7 @@ final class DSButton: UIButton {
     }
     
     private func configurePrimaryButton() {
-        backgroundColor = UIColor(named: "DSPrimary")
+        backgroundColor = DesignSystem.primary
         titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         layer.cornerRadius = 5
         layer.shadowColor = UIColor.black.cgColor
@@ -51,6 +51,20 @@ final class DSButton: UIButton {
     
     private func configureSecondaryButton() {
         backgroundColor = .clear
-        setTitleColor(UIColor(named: "DSPrimary"), for: .normal)
+        setTitleColor(DesignSystem.primary, for: .normal)
+    }
+    
+    public func setTitle(with title: String) {
+        let yourAttributes: [NSAttributedString.Key: Any] = [
+             .font: UIFont.systemFont(ofSize: 18),
+             .foregroundColor: DesignSystem.primary ?? .blue,
+             .underlineStyle: NSUnderlineStyle.single.rawValue
+         ]
+        
+        let attributeString = NSMutableAttributedString(
+            string: title,
+            attributes: yourAttributes
+        )
+        setAttributedTitle(attributeString, for: .normal)
     }
 }
