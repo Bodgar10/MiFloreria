@@ -62,7 +62,7 @@ final class RecoveryPassViewController: MainViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Contraseña"
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
