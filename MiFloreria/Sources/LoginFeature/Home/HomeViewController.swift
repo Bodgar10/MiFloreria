@@ -8,6 +8,7 @@
 import Combine
 import UIKit
 import ProjectUI
+import SwiftUI
 
 class HomeViewController: MainViewController {
 
@@ -89,6 +90,7 @@ class HomeViewController: MainViewController {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.background
 #if DEV
+        print("Nuestro uid es: \(UserInfo.shared.getUID)")
         setupBinding()
 #endif
     }
@@ -98,10 +100,11 @@ class HomeViewController: MainViewController {
 #if DEV
     private func setupBinding() {
         logInButton.didTap.sink { [weak self] in
-            let phoneController = PhoneViewController()
+            self?.createSwiftUIView()
+            /*let phoneController = PhoneViewController()
             phoneController.configure(with: "Entrar")
             phoneController.viewModel = SignInViewModel()
-            self?.navigationController?.pushViewController(phoneController, animated: true)
+            self?.navigationController?.pushViewController(phoneController, animated: true)*/
         }
         .store(in: &cancellables)
         
@@ -137,6 +140,15 @@ class HomeViewController: MainViewController {
             .pin(.top, yAnchor: logoImage.bottomAnchor, spacing: .xLarge)
             .pin(.trailing, to: view, spacing: -.xLarge)
             .pin(.leading, to: view, spacing: .xLarge)
+    }
+    
+    private func createSwiftUIView() {
+        // Crear una instancia de SwiftUIView
+        let swiftUIView = ContentView()
+
+        // Crear un HostingViewController y adjuntar la vista SwiftUI
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        self.navigationController?.pushViewController(hostingController, animated: true)
     }
 
 }

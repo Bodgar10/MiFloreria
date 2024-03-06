@@ -9,14 +9,25 @@ import Foundation
 import FirebaseAuth
 import Combine
 
-protocol SignIn {
+protocol VerifyPhone {
     typealias ResultValidation = Result<String, Error>
-    var verificationPhonePublisher: CurrentValueSubject<ResultValidation, Error> { get }
+    var verificationPhonePublisher: PassthroughSubject<ResultValidation, Error> { get }
+    
     func verifyPhoneNumber(with phone: String?)
 }
 
-final class SignInViewModel: SignIn {
-    var verificationPhonePublisher = CurrentValueSubject<ResultValidation, Error>(.success(""))
+protocol SignIn {
+    typealias ResultSignIn = Result<String, Error>
+    var signInPublisher: PassthroughSubject<ResultSignIn, Error> { get }
+    
+    func signIn(verificationId: String, verificationCode: String)
+}
+
+final class SignInViewModel: VerifyPhone {
+    var signInPublisher = PassthroughSubject<ResultSignIn, Error>()
+    
+    // MARK: Verify Phone Protocol
+    var verificationPhonePublisher = PassthroughSubject<ResultValidation, Error>()
     
     func verifyPhoneNumber(with phone: String?) {
         guard let phone = phone, hasValidLong(numberPhone: phone) else { return }
@@ -43,4 +54,22 @@ final class SignInViewModel: SignIn {
     }
 }
 
-
+extension SignInViewModel: SignIn {
+    
+    // MARK: SignIn Protocol
+    
+    func signIn(verificationId: String, verificationCode: String) {
+        let credential = PhoneAuthProvider.provider().credential(
+          withVerificationID: verificationId,
+          verificationCode: verificationCode
+        )
+        
+        Auth.auth().signIn(with: credential) { [weak self] result, error in
+            if let error = error {
+                self?.signInPublisher.send(.failure(error))
+            } else {
+                self?.signInPublisher.send(.success(result?.user.uid ?? ""))
+            }
+        }
+    }
+}

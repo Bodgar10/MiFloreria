@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		870FC13D2B9800980059A89A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870FC13C2B9800980059A89A /* Constants.swift */; };
+		870FC13E2B9800980059A89A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870FC13C2B9800980059A89A /* Constants.swift */; };
+		871E7AB72B8FD6B300350C41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E7AB62B8FD6B300350C41 /* ContentView.swift */; };
+		871E7AB82B8FD6B300350C41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E7AB62B8FD6B300350C41 /* ContentView.swift */; };
 		871EAB952B75B33B0084366B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB942B75B33B0084366B /* GoogleService-Info.plist */; };
 		871EAB962B75B33B0084366B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB942B75B33B0084366B /* GoogleService-Info.plist */; };
 		871EAB992B75B4030084366B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 871EAB982B75B4030084366B /* FirebaseAnalytics */; };
@@ -99,11 +103,17 @@
 		87E006752B575D65000DE097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E006732B575D65000DE097 /* LaunchScreen.storyboard */; };
 		87E0067E2B575FC7000DE097 /* ProjectUI in Frameworks */ = {isa = PBXBuildFile; productRef = 87E0067D2B575FC7000DE097 /* ProjectUI */; };
 		87E006832B576A9C000DE097 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E006822B576A9C000DE097 /* DemoTableViewController.swift */; };
+		87FD9F472B8EC56900C4D23E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD9F462B8EC56900C4D23E /* UserInfo.swift */; };
+		87FD9F482B8EC56900C4D23E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD9F462B8EC56900C4D23E /* UserInfo.swift */; };
+		87FD9F4A2B8ECE4600C4D23E /* AdditionalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD9F492B8ECE4600C4D23E /* AdditionalInfoViewModel.swift */; };
+		87FD9F4B2B8ECE4600C4D23E /* AdditionalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD9F492B8ECE4600C4D23E /* AdditionalInfoViewModel.swift */; };
 		B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92ED9412B6C857300BA682B /* PhoneViewController.swift */; };
 		B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92ED9412B6C857300BA682B /* PhoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		870FC13C2B9800980059A89A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		871E7AB62B8FD6B300350C41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		871EAB942B75B33B0084366B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		871EABED2B75B6A30084366B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		873DDD2C2B6341A5003D026A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +141,8 @@
 		87E006742B575D65000DE097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87E006762B575D65000DE097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87E006822B576A9C000DE097 /* DemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
+		87FD9F462B8EC56900C4D23E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		87FD9F492B8ECE4600C4D23E /* AdditionalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewModel.swift; sourceTree = "<group>"; };
 		B92ED9412B6C857300BA682B /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				8744EB422B6C813500EA4493 /* AdditionalInfoSignInViewController.swift */,
+				87FD9F492B8ECE4600C4D23E /* AdditionalInfoViewModel.swift */,
 			);
 			path = AdditionalInfo;
 			sourceTree = "<group>";
@@ -259,6 +272,9 @@
 			isa = PBXGroup;
 			children = (
 				8750B3102B73178600D84A8E /* MainViewController.swift */,
+				87FD9F462B8EC56900C4D23E /* UserInfo.swift */,
+				871E7AB62B8FD6B300350C41 /* ContentView.swift */,
+				870FC13C2B9800980059A89A /* Constants.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -532,6 +548,7 @@
 				87A968AA2B59F7DF00FF54B9 /* MiFloreria.xcdatamodeld in Sources */,
 				87A968AB2B59F7DF00FF54B9 /* AppDelegate.swift in Sources */,
 				8794A09A2B60A69200349AB7 /* DSButton.swift in Sources */,
+				87FD9F4B2B8ECE4600C4D23E /* AdditionalInfoViewModel.swift in Sources */,
 				8744EB482B6C827E00EA4493 /* Extension+UIColor.swift in Sources */,
 				87A968AC2B59F7DF00FF54B9 /* SceneDelegate.swift in Sources */,
 				8744EB502B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */,
@@ -540,7 +557,10 @@
 				B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */,
 				8750B3122B73178900D84A8E /* MainViewController.swift in Sources */,
 				87A968C02B5A08EC00FF54B9 /* Extension+UIControl.swift in Sources */,
+				87FD9F482B8EC56900C4D23E /* UserInfo.swift in Sources */,
+				871E7AB82B8FD6B300350C41 /* ContentView.swift in Sources */,
 				873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */,
+				870FC13E2B9800980059A89A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +579,7 @@
 				8794A0982B60A66B00349AB7 /* DemoButtonsTableViewController.swift in Sources */,
 				87E006702B575D64000DE097 /* MiFloreria.xcdatamodeld in Sources */,
 				87E006662B575D64000DE097 /* AppDelegate.swift in Sources */,
+				87FD9F4A2B8ECE4600C4D23E /* AdditionalInfoViewModel.swift in Sources */,
 				8744EB472B6C827E00EA4493 /* Extension+UIColor.swift in Sources */,
 				87E006682B575D64000DE097 /* SceneDelegate.swift in Sources */,
 				8744EB4F2B6C877200EA4493 /* DemoTextFieldWithLineViewController.swift in Sources */,
@@ -567,7 +588,10 @@
 				B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */,
 				8750B3112B73178600D84A8E /* MainViewController.swift in Sources */,
 				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
+				87FD9F472B8EC56900C4D23E /* UserInfo.swift in Sources */,
+				871E7AB72B8FD6B300350C41 /* ContentView.swift in Sources */,
 				873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */,
+				870FC13D2B9800980059A89A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
