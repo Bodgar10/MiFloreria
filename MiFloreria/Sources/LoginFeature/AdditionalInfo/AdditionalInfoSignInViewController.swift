@@ -7,9 +7,21 @@
 
 import UIKit
 import ProjectUI
+import Combine
 
+/// 1. Guardar los datos del usuario en base de datos interna de la app.
+///     1.1 Cifrar el uid.
+/// 2. Guardar los datos del usuario en firebase.
+///     2.1 Cifrar contraseña.
 final class AdditionalInfoSignInViewController: MainViewController {
 
+    // MARK: Variables
+    var uid: String?
+    var phone: String?
+    var viewModel: AdditionalInfoProtocol?
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
     // MARK: Private Components
     
     private let titleLabel: UILabel = {
@@ -97,9 +109,37 @@ final class AdditionalInfoSignInViewController: MainViewController {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.background
         configureTextFields()
+        setupBindings()
     }
 
     // MARK: Private functions
+    
+    private func setupBindings() {
+        signInButton.didTap.sink { [weak self] _ in
+            guard let self else { return }
+            self.showActivityIndicator()
+            self.viewModel?.saveInfo(
+                with:
+                    .init(
+                        name: self.nameTextField.textField.text ?? "",
+                        lastName: self.lastNameTextField.textField.text ?? "",
+                        email: self.emailTextField.textField.text ?? "",
+                        password: self.passwordTextField.textField.text ?? "",
+                        phone: self.phone ?? "",
+                        uid: self.uid ?? "")
+            )
+        }.store(in: &cancellables)
+        
+        viewModel?.registerUserPublisher.sink(receiveCompletion: { _ in
+            
+        }, receiveValue: { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.hideActivityIndicator()
+            default: return
+            }
+        }).store(in: &cancellables)
+    }
     
     private func configureTextFields() {
         nameTextField.configure(placeholder: "Nombre")

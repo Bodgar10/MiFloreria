@@ -11,6 +11,8 @@ import ProjectUI
 
 final class PhoneViewController : MainViewController {
    
+    var viewModel: VerifyPhone?
+    
    private var cancellables: Set<AnyCancellable> = []
     
    private var singInLabel : UILabel = {
@@ -95,9 +97,25 @@ final class PhoneViewController : MainViewController {
    
 #if DEV
     private func setupBinding() {
-        nextButton.didTap.sink { _ in
-            // TODO: Send to the next view of the signin
+        nextButton.didTap.sink { [weak self] _ in
+            self?.showActivityIndicator()
+            self?.viewModel?.verifyPhoneNumber(with: self?.phoneTextField.text)
         }
+        .store(in: &cancellables)
+        
+        viewModel?.verificationPhonePublisher.sink(receiveCompletion: { _ in
+        }, receiveValue: { [weak self] result in
+            self?.hideActivityIndicator()
+            switch result {
+            case .failure(let error):
+                self?.showAlert(with: "¡Ups!", and: error.localizedDescription)
+            case .success(let verificationId):
+                let verifyPhoneViewController = VerifyCodeViewController()
+                verifyPhoneViewController.viewModel = SignInViewModel()
+                verifyPhoneViewController.configure(with: self?.phoneTextField.text ?? "", verificationId: verificationId)
+                self?.navigationController?.pushViewController(verifyPhoneViewController, animated: true)
+            }
+        })
         .store(in: &cancellables)
     }
 #endif

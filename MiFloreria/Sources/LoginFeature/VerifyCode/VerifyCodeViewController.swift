@@ -11,6 +11,10 @@ import UIKit
 
 class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
 
+    var viewModel: VerifyPhone & SignIn = SignInViewModel()
+    private var numberPhone: String = ""
+    private var verificationId: String = ""
+    
     private var codetextFiels: [UITextField] = []
     
     private var cancellables: Set<AnyCancellable> = []
@@ -27,12 +31,12 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
     private let codeStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 10
+        stackView.spacing = 0
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
         stackView.spacing = Spacing.large.rawValue
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        let heightConstraint = stackView.heightAnchor.constraint(equalToConstant: 50)
+        let heightConstraint = stackView.heightAnchor.constraint(equalToConstant: 42)
         heightConstraint.isActive = true
         return stackView
     }()
@@ -89,6 +93,8 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
         with numberPhone: String,
         verificationId: String
     ) {
+        self.numberPhone = numberPhone
+        self.verificationId = verificationId
         self.resendCodeLabel.text = "Tu código se enviará al número: \(numberPhone)"
     }
     
@@ -97,13 +103,48 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
 #if DEV
     private func setupBinding() {
         nextButton.didTap.sink { _ in
-            // TODO: Send to the next view of the additional info
+            self.showActivityIndicator()
+            self.viewModel.signIn(verificationId: self.verificationId, verificationCode: self.getCode())
         }
         .store(in: &cancellables)
         
-        resendButton.didTap.sink { _ in
-            // TODO: Execute again the service for the authentication with phone
+        viewModel.signInPublisher.sink { _ in
+        } receiveValue: { [weak self] result in
+            guard let self else { return }
+            self.hideActivityIndicator()
+            switch result {
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            case .success(let uid):
+                let additionalInfo = AdditionalInfoSignInViewController()
+                additionalInfo.uid = uid
+                additionalInfo.phone = self.numberPhone
+                additionalInfo.viewModel = AdditionalInfoViewModel()
+                self.navigationController?.pushViewController(additionalInfo, animated: true)
+            }
         }
+        .store(in: &cancellables)
+
+        
+        
+        resendButton.didTap.sink { [weak self] in
+            self?.showActivityIndicator()
+            self?.viewModel.verifyPhoneNumber(with: self?.numberPhone)
+        }.store(in: &cancellables)
+        
+        viewModel.verificationPhonePublisher.sink(receiveCompletion: { _ in
+        }, receiveValue: { [weak self] result in
+            guard let self = self else {return}
+            self.hideActivityIndicator()
+            switch result {
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            case .success(let verificationId):
+                self.verificationId = verificationId
+                self.showAlert(with: "Código enviado", and: "Te hemos enviado nuevamente tu código.")
+            }
+        })
+        .store(in: &cancellables)
     }
 #endif
     
@@ -139,7 +180,7 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
     }
     
     func setupTextFields() {
-        for _ in 0..<5 {
+        for _ in 0..<6 {
             let textField = UITextField()
             textField.translatesAutoresizingMaskIntoConstraints = false
             textField.keyboardType = .numberPad
@@ -170,6 +211,12 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
         }
     }
     
-   
+    private func getCode() -> String {
+        var code: String = ""
+        codetextFiels.forEach { textfield in
+            code.append(textfield.text ?? "")
+        }
+        return code
+    }
 
 }
