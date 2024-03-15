@@ -8,13 +8,14 @@
 import Combine
 import UIKit
 import ProjectUI
-import SwiftUI
+import Firebase
 
 class HomeViewController: MainViewController {
 
     // MARK: Private variables
     
     private var cancellables: Set<AnyCancellable> = []
+    var homeTracking: HomeAnalytics?
     
     // MARK: UI Components
     
@@ -90,8 +91,8 @@ class HomeViewController: MainViewController {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.background
 #if DEV
-        print("Nuestro uid es: \(UserInfo.shared.getUID)")
         setupBinding()
+        homeTracking?.viewDidLoadTracking()
 #endif
     }
     
@@ -100,17 +101,18 @@ class HomeViewController: MainViewController {
 #if DEV
     private func setupBinding() {
         logInButton.didTap.sink { [weak self] in
-            self?.createSwiftUIView()
-            /*let phoneController = PhoneViewController()
+            self?.homeTracking?.buttonTappedTracking(with: "logInButton")
+            let phoneController = PhoneViewController()
             phoneController.configure(with: "Entrar")
-            phoneController.viewModel = SignInViewModel()
-            self?.navigationController?.pushViewController(phoneController, animated: true)*/
+            phoneController.viewModel = SignInViewModel(phoneTracking: PhoneFirebaseTracking())
+            self?.navigationController?.pushViewController(phoneController, animated: true)
         }
         .store(in: &cancellables)
         
         signInButton.didTap.sink { [weak self] in
+            self?.homeTracking?.buttonTappedTracking(with: "signInButton")
             let phoneController = PhoneViewController()
-            phoneController.viewModel = SignInViewModel()
+            phoneController.viewModel = SignInViewModel(phoneTracking: PhoneFirebaseTracking())
             self?.navigationController?.pushViewController(phoneController, animated: true)
         }
         .store(in: &cancellables)
@@ -141,14 +143,4 @@ class HomeViewController: MainViewController {
             .pin(.trailing, to: view, spacing: -.xLarge)
             .pin(.leading, to: view, spacing: .xLarge)
     }
-    
-    private func createSwiftUIView() {
-        // Crear una instancia de SwiftUIView
-        let swiftUIView = ContentView()
-
-        // Crear un HostingViewController y adjuntar la vista SwiftUI
-        let hostingController = UIHostingController(rootView: swiftUIView)
-        self.navigationController?.pushViewController(hostingController, animated: true)
-    }
-
 }

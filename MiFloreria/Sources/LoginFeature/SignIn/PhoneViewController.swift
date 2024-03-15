@@ -87,6 +87,7 @@ final class PhoneViewController : MainViewController {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.background
 #if DEV
+        viewModel?.viewDidLoad()
         setupBinding()
 #endif
    }
@@ -111,7 +112,7 @@ final class PhoneViewController : MainViewController {
                 self?.showAlert(with: "¡Ups!", and: error.localizedDescription)
             case .success(let verificationId):
                 let verifyPhoneViewController = VerifyCodeViewController()
-                verifyPhoneViewController.viewModel = SignInViewModel()
+                verifyPhoneViewController.viewModel = SignInViewModel(phoneTracking: PhoneFirebaseTracking())
                 verifyPhoneViewController.configure(with: self?.phoneTextField.text ?? "", verificationId: verificationId)
                 self?.navigationController?.pushViewController(verifyPhoneViewController, animated: true)
             }

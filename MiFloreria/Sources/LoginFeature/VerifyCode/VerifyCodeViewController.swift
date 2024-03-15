@@ -11,7 +11,7 @@ import UIKit
 
 class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
 
-    var viewModel: VerifyPhone & SignIn = SignInViewModel()
+    var viewModel: VerifyPhone & SignIn = SignInViewModel(phoneTracking: PhoneFirebaseTracking())
     private var numberPhone: String = ""
     private var verificationId: String = ""
     
@@ -82,6 +82,7 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.background
 #if DEV
+        viewModel.viewDidLoad()
         setupBinding()
 #endif
         
@@ -119,7 +120,7 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
                 let additionalInfo = AdditionalInfoSignInViewController()
                 additionalInfo.uid = uid
                 additionalInfo.phone = self.numberPhone
-                additionalInfo.viewModel = AdditionalInfoViewModel()
+                additionalInfo.viewModel = AdditionalInfoViewModel(additionalInfoTracking: AdditionalInfoFirebaseTracking())
                 self.navigationController?.pushViewController(additionalInfo, animated: true)
             }
         }
