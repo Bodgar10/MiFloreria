@@ -31,6 +31,7 @@ struct User {
 
 protocol AdditionalInfoProtocol {
     typealias ResultValidation = Result<Bool, Error>
+    var additionalInfoTracking: AdditionalInfoAnalytics { get set }
     var registerUserPublisher: PassthroughSubject<ResultValidation, Error> { get }
     
     func saveInfo(with user: User)
@@ -38,10 +39,15 @@ protocol AdditionalInfoProtocol {
 
 final class AdditionalInfoViewModel: AdditionalInfoProtocol {
     
+    var additionalInfoTracking: AdditionalInfoAnalytics
     var registerUserPublisher = PassthroughSubject<ResultValidation, Error>()
     
     private var userInfo = UserInfo.shared
     private var ref = Database.database().reference()
+    
+    init(additionalInfoTracking: AdditionalInfoAnalytics) {
+        self.additionalInfoTracking = additionalInfoTracking
+    }
     
     func saveInfo(with user: User) {
         // TODO: POSIBLES ERRORES
@@ -49,7 +55,9 @@ final class AdditionalInfoViewModel: AdditionalInfoProtocol {
         /// Que no exista ningún dato vacío.
         /// Se deben enviar al viewController y mostrar en una alerta.
         userInfo.saveUser(with: user)
+        
         ref.child(Constants.Users.users.rawValue).child(user.uid).updateChildValues(user.getDictionary())
+        additionalInfoTracking.saveUserTracking(with: user)
         registerUserPublisher.send(.success(true))
     }
 }
