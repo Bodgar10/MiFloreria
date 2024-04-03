@@ -9,6 +9,7 @@ import UIKit
 import ProjectUI
 import Combine
 
+
 /// 1. Guardar los datos del usuario en base de datos interna de la app.
 ///     1.1 Cifrar el uid.
 /// 2. Guardar los datos del usuario en firebase.
@@ -118,25 +119,30 @@ final class AdditionalInfoSignInViewController: MainViewController {
         signInButton.didTap.sink { [weak self] _ in
             guard let self else { return }
             self.showActivityIndicator()
-            self.viewModel?.saveInfo(
-                with:
-                    .init(
-                        name: self.nameTextField.textField.text ?? "",
-                        lastName: self.lastNameTextField.textField.text ?? "",
-                        email: self.emailTextField.textField.text ?? "",
-                        password: self.passwordTextField.textField.text ?? "",
-                        phone: self.phone ?? "",
-                        uid: self.uid ?? "")
-            )
+                self.viewModel?.saveInfo(
+                    with:
+                            .init(
+                                name: self.nameTextField.textField.text ?? "",
+                                lastName: self.lastNameTextField.textField.text ?? "",
+                                email: self.emailTextField.textField.text ?? "",
+                                password: self.passwordTextField.textField.text ?? "",
+                                confirmpass: self.confirmPasswordTextField.textField.text ?? "",
+                                phone: self.phone ?? "",
+                                uid: self.uid ?? "")
+                )
+                
+            
         }.store(in: &cancellables)
         
         viewModel?.registerUserPublisher.sink(receiveCompletion: { _ in
             
         }, receiveValue: { [weak self] result in
             switch result {
+            case .failure(let error):
+                self?.showAlert(with: "Atención", and: error.localizedDescription)
             case .success(_):
                 self?.hideActivityIndicator()
-            default: return
+            
             }
         }).store(in: &cancellables)
     }
@@ -184,4 +190,10 @@ final class AdditionalInfoSignInViewController: MainViewController {
             .pin(.trailing, to: view, spacing: -.medium)
             .pin(.leading, to: view, spacing: .medium)
     }
+    
+    
 }
+
+
+
+
