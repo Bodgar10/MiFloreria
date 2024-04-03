@@ -80,7 +80,7 @@ final class UserInfo {
     }
     
     func savePassword(with password: String) {
-        let passwordEncoded = password.data(using: .utf8)
+        let passwordEncoded = password.data(using: .utf8)?.base64EncodedString()
         userDefault.set(passwordEncoded, forKey: UserInfoConstants.password)
     }
     
