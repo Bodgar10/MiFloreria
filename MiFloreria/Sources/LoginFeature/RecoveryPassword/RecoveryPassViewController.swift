@@ -152,10 +152,6 @@ final class RecoveryPassViewController: MainViewController {
             // TODO: Send to the next view of the additional info
         }
         .store(in: &cancellables)
-
-//        resendButton.didTap.sink { _ in
-//            // TODO: Execute again the service for the authentication with phone
-//        }
     }
 #endif
 
