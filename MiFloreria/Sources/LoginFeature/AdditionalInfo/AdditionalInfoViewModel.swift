@@ -10,10 +10,10 @@ import Firebase
 import Combine
 import UIKit
 
-struct User {
+struct User: Decodable {
     typealias UsersDatabase = Constants.Users
     let name: String
-    let lastName: String
+    let lastName: String?
     let email: String
     let password: String
     let confirmpass: String
@@ -22,7 +22,7 @@ struct User {
     
     func getDictionary() -> [String: Any] {
         return [
-            UsersDatabase.name.rawValue: name + " " + lastName,
+            UsersDatabase.name.rawValue: name + " " + (lastName ?? ""),
             UsersDatabase.email.rawValue: email,
             UsersDatabase.password.rawValue: password.data(using: .utf8)?.base64EncodedString() ?? "",
             UsersDatabase.phone.rawValue: phone,
@@ -45,10 +45,12 @@ final class AdditionalInfoViewModel: AdditionalInfoProtocol {
     var registerUserPublisher = PassthroughSubject<ResultValidation, Error>()
     
     private var userInfo = UserInfo.shared
-    private var ref = Database.database().reference()
+    private var dbConnection: DBConnection
     
-    init(additionalInfoTracking: AdditionalInfoAnalytics) {
+    init(additionalInfoTracking: AdditionalInfoAnalytics,
+         dbConnection: DBConnection) {
         self.additionalInfoTracking = additionalInfoTracking
+        self.dbConnection = dbConnection
     }
     
     private func validateInfo(with user: User ) -> Bool {
@@ -91,13 +93,34 @@ final class AdditionalInfoViewModel: AdditionalInfoProtocol {
         /// Que no exista ningún dato vacío.
         /// Se deben enviar al viewController y mostrar en una alerta.
         if validateInfo(with: user){
-            userInfo.saveUser(with: user)
-            
-            ref.child(Constants.Users.users.rawValue).child(user.uid).updateChildValues(user.getDictionary())
-            additionalInfoTracking.saveUserTracking(with: user)
-            registerUserPublisher.send(.success(true))
+          userInfo.saveUser(with: user)
+          dbConnection.sendUser(with: user)
+          additionalInfoTracking.saveUserTracking(with: user)
+          registerUserPublisher.send(.success(true))
         }
     }
     
     
+}
+
+protocol DBConnection {
+    func sendUser(with user: User)
+}
+
+final class FirebaseDBConnection: DBConnection {
+    private var ref = Database.database().reference()
+    
+    func sendUser(with user: User) {
+        ref.child(Constants.Users.users.rawValue).child(user.uid).updateChildValues(user.getDictionary())
+    }
+}
+
+final class URLSessionConnection: DBConnection {
+    func sendUser(with user: User) {
+        let session = URLSession.shared
+        let task = session.dataTask(with: URLRequest(url: URL(string:"any-url.com")!)) { data, url, error in
+            
+        }
+        task.resume()
+    }
 }

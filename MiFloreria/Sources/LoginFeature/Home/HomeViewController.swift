@@ -104,14 +104,16 @@ class HomeViewController: MainViewController {
             self?.homeTracking?.buttonTappedTracking(with: "logInButton")
             let phoneController = PhoneViewController()
             phoneController.configure(with: "Entrar")
+            UserDefaults.standard.set(1, forKey: "previousButtonTag")
             phoneController.viewModel = SignInViewModel(phoneTracking: PhoneFirebaseTracking())
             self?.navigationController?.pushViewController(phoneController, animated: true)
         }
         .store(in: &cancellables)
-        
+    
         signInButton.didTap.sink { [weak self] in
             self?.homeTracking?.buttonTappedTracking(with: "signInButton")
             let phoneController = PhoneViewController()
+            UserDefaults.standard.set(2, forKey: "previousButtonTag")
             phoneController.viewModel = SignInViewModel(phoneTracking: PhoneFirebaseTracking())
             self?.navigationController?.pushViewController(phoneController, animated: true)
         }

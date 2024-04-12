@@ -116,12 +116,20 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
             switch result {
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
-            case .success(let uid):
-                let additionalInfo = AdditionalInfoSignInViewController()
-                additionalInfo.uid = uid
-                additionalInfo.phone = self.numberPhone
-                additionalInfo.viewModel = AdditionalInfoViewModel(additionalInfoTracking: AdditionalInfoFirebaseTracking())
-                self.navigationController?.pushViewController(additionalInfo, animated: true)
+            case .success((let isRegister, let uid)):
+                if let previousButtonTag = UserDefaults.standard.value(forKey: "previousButtonTag") as? Int {
+                    if previousButtonTag == 2 || !isRegister {
+                        let additionalInfo = AdditionalInfoSignInViewController()
+                        additionalInfo.uid = uid
+                        additionalInfo.phone = self.numberPhone
+                        additionalInfo.viewModel = AdditionalInfoViewModel(
+                            additionalInfoTracking: AdditionalInfoFirebaseTracking(),
+                            dbConnection: FirebaseDBConnection())
+                        self.navigationController?.pushViewController(additionalInfo, animated: true)
+                    }else if previousButtonTag == 1 {
+                        self.navigationController?.pushViewController(RecoveryPassViewController(), animated: true)
+                    }
+                }
             }
         }
         .store(in: &cancellables)
