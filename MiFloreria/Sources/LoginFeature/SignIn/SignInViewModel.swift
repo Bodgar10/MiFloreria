@@ -54,7 +54,6 @@ final class SignInViewModel: VerifyPhone {
             }
         }
     }
-    
     private func hasValidLong(numberPhone: String) -> Bool {
         if numberPhone.isEmpty {
             let error = NSError(domain: "", code: -199, userInfo: [NSLocalizedDescriptionKey: "Escribe un número telefónico."])

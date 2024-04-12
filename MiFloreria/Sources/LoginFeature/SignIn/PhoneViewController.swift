@@ -103,7 +103,7 @@ final class PhoneViewController : MainViewController {
             self?.viewModel?.verifyPhoneNumber(with: self?.phoneTextField.text)
         }
         .store(in: &cancellables)
-        
+        /// analizar este codigo 
         viewModel?.verificationPhonePublisher.sink(receiveCompletion: { _ in
         }, receiveValue: { [weak self] result in
             self?.hideActivityIndicator()
@@ -165,4 +165,7 @@ final class PhoneViewController : MainViewController {
            .pin(.centerX, to: view)
            .pinSize(to: CGSize(width: 100, height: 45))
    }
+    
 }
+
+
