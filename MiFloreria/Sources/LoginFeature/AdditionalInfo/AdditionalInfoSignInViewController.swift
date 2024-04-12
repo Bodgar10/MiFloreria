@@ -8,8 +8,6 @@
 import UIKit
 import ProjectUI
 import Combine
-
-
 /// 1. Guardar los datos del usuario en base de datos interna de la app.
 ///     1.1 Cifrar el uid.
 /// 2. Guardar los datos del usuario en firebase.
@@ -193,7 +191,4 @@ final class AdditionalInfoSignInViewController: MainViewController {
     
     
 }
-
-
-
 

@@ -8,7 +8,6 @@
 import Foundation
 import Firebase
 import Combine
-import UIKit
 
 struct User: Decodable {
     typealias UsersDatabase = Constants.Users
@@ -16,7 +15,7 @@ struct User: Decodable {
     let lastName: String?
     let email: String
     let password: String
-    let confirmpass: String
+    let confirmpass: String?
     let phone: String
     let uid: String
     
@@ -88,10 +87,6 @@ final class AdditionalInfoViewModel: AdditionalInfoProtocol {
     }
     
     func saveInfo(with user: User) {
-        // TODO: POSIBLES ERRORES
-        /// Que la contraseña sea igual a la confirmar contraseña.
-        /// Que no exista ningún dato vacío.
-        /// Se deben enviar al viewController y mostrar en una alerta.
         if validateInfo(with: user){
           userInfo.saveUser(with: user)
           dbConnection.sendUser(with: user)
