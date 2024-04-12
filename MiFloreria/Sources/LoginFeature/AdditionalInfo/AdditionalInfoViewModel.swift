@@ -19,6 +19,7 @@ struct User: Decodable {
     let phone: String
     let uid: String
     
+    
     func getDictionary() -> [String: Any] {
         return [
             UsersDatabase.name.rawValue: name + " " + (lastName ?? ""),

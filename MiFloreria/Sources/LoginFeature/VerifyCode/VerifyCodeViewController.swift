@@ -116,7 +116,7 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
             switch result {
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
-            case .success((let isRegister, let uid)):
+            case .success((let isRegister, let uid, let currentPassword)):
                 if let previousButtonTag = UserDefaults.standard.value(forKey: "previousButtonTag") as? Int {
                     if previousButtonTag == 2 || !isRegister {
                         let additionalInfo = AdditionalInfoSignInViewController()
@@ -127,7 +127,9 @@ class VerifyCodeViewController: MainViewController, UITextFieldDelegate {
                             dbConnection: FirebaseDBConnection())
                         self.navigationController?.pushViewController(additionalInfo, animated: true)
                     }else if previousButtonTag == 1 {
-                        self.navigationController?.pushViewController(RecoveryPassViewController(), animated: true)
+                        let passViewController = RecoveryPassViewController()
+                        passViewController.viewModel = ConfirmPassViewModel(currentPassword: currentPassword)
+                        self.navigationController?.pushViewController(passViewController, animated: true)
                     }
                 }
             }

@@ -23,7 +23,7 @@ protocol VerifyPhone: FlorezAnalytics {
 }
 
 protocol SignIn: FlorezAnalytics {
-    typealias ResultSignIn = Result<(Bool, String), Error>
+    typealias ResultSignIn = Result<(Bool, String, String), Error>
     var signInPublisher: PassthroughSubject<ResultSignIn, Error> { get }
     
     func signIn(verificationId: String, verificationCode: String)
@@ -92,29 +92,30 @@ extension SignInViewModel: SignIn {
                 self.signInPublisher.send(.failure(error))
             } else {
                 guard let result else { return }
-                self.getUser(with: result.user.uid) { isRegister, uid in
-                    self.signInPublisher.send(.success((isRegister, uid)))
+                self.getUser(with: result.user.uid) { isRegister, uid, password in
+                    self.signInPublisher.send(.success((isRegister, uid, password)))
                 }
             }
         }
     }
     
-    private func getUser(with uid: String, completion: @escaping (Bool, String) -> Void) {
+    private func getUser(with uid: String, completion: @escaping (Bool, String, String) -> Void) {
         let ref = Database.database().reference()
+        var user: User?
         var isRegister = false
         ref.child(Constants.Users.users.rawValue).child(uid).observeSingleEvent(of: .value) { snapshot in
             guard let value = snapshot.value as? [String: Any] else {return}
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
-                let user = try JSONDecoder().decode(User.self, from: jsonData)
-                isRegister = user.uid == uid
+                user = try JSONDecoder().decode(User.self, from: jsonData)
+                isRegister = user?.uid == uid
             } catch let error {
                 print(error)
             }
         }
         
         let _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-            completion(isRegister, uid)
+            completion(isRegister, uid, user?.password ?? "")
         }
     }
 }

@@ -133,7 +133,10 @@ final class RecoveryPassViewController: MainViewController {
         label.addGestureRecognizer(tapGesture)
         return label
     }()
-
+    
+    // MARK: ViewModel
+    
+    public var viewModel: ConfirmPassViewModel?
 
     // MARK: LifeCycle
     override func viewDidLoad() {
@@ -149,7 +152,11 @@ final class RecoveryPassViewController: MainViewController {
 #if DEV
     private func setupBinding() {
         nextButton.didTap.sink { _ in
-            // TODO: Send to the next view of the additional info
+            if self.viewModel?.verifyPassword(with: self.passTextField.text ?? "") ?? false {
+                self.showAlert(with: "BIENVENIDO", and: "Eres un usuario")
+            } else {
+                self.showAlert(with: "ERROR", and: "Por favor, revisa que la contraseña sea correcta.")
+            }
         }
         .store(in: &cancellables)
     }
