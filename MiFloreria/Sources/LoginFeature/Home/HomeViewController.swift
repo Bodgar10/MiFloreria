@@ -31,6 +31,7 @@ class HomeViewController: MainViewController {
         stackView.axis = .vertical
         stackView.spacing = Spacing.large.rawValue
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fillProportionally
         return stackView
     }()
     
@@ -133,7 +134,7 @@ class HomeViewController: MainViewController {
         mainStackView.addArrangedSubview(deliveryLabel)
         mainStackView.addArrangedSubview(buttonsStackView)
         
-        buttonsStackView.pinSize(to: CGSize(width: mainStackView.frame.width, height: 45))
+        buttonsStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05).isActive = true
         
         logoImage
             .pin(.top, to: view.safeAreaLayoutGuide, constant: 16)

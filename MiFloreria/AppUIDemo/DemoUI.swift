@@ -31,6 +31,7 @@ final class DemoUI {
         case verifyCodeViewController
         case additionalInformationViewController
         case recoveryPassViewController
+        case exampleViewController
         
         /// `Section FeedFeature`
 
@@ -56,6 +57,8 @@ final class DemoUI {
                 return "AdditionalInfoSignInViewController"
             case .recoveryPassViewController:
                 return "RecoveryPassViewController"
+            case .exampleViewController:
+                return "ExampleViewController"
             }
         }
         
@@ -79,6 +82,8 @@ final class DemoUI {
                 return AdditionalInfoSignInViewController()
             case .recoveryPassViewController:
                 return RecoveryPassViewController()
+            case .exampleViewController:
+                return ExampleViewController()
             }
         }
         
@@ -100,6 +105,7 @@ final class DemoUI {
             .verifyCodeViewController,
             .additionalInformationViewController,
             .recoveryPassViewController,
+            .exampleViewController
          ]
         ),
         (.feedFeature, []),

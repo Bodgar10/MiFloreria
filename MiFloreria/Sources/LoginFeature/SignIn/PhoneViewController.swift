@@ -38,7 +38,7 @@ final class PhoneViewController : MainViewController {
        let stack = UIStackView()
        stack.translatesAutoresizingMaskIntoConstraints = false
        stack.axis = .horizontal
-       stack.distribution = .fill
+       stack.distribution = .fillEqually
        stack.spacing = 5
        stack.layer.borderWidth = 1
        stack.layer.borderColor = UIColor.lightGray.cgColor
@@ -141,24 +141,16 @@ final class PhoneViewController : MainViewController {
            .pin(.top, yAnchor: singInLabel.bottomAnchor, spacing: .medium)
            .pin(.leading, to: view , constant: 30)
            .pin(.trailing, to: view, constant: -30)
-           .pinSize(to: 50)
        
        codeCountryStackView
-           .pinSize(to: 80)
-       
-       flagImageView
-           .pinSize(to: 25)
-           .pin(.leading, to: codeCountryStackView, constant: 10)
-       
-       codePhoneLabel
-           .pin(.trailing, to: codeCountryStackView, constant: -10)
-       
+            .pinSize(to: CGSize(width: 70, height: 50))
        
        lineBaseView
            .pin(.top, yAnchor: phoneStackView.bottomAnchor, spacing: .small)
            .pin(.leading, to: view, constant: 20)
            .pin(.trailing, to: view, constant: -20)
-           .pinSize(to: 1)
+        
+        lineBaseView.heightAnchor.constraint(equalToConstant: 1).isActive = true
        
        nextButton
            .pin(.top, yAnchor: lineBaseView.bottomAnchor, spacing: .medium)
