@@ -33,7 +33,8 @@ final class DemoUI {
         case recoveryPassViewController
         
         /// `Section FeedFeature`
-
+        case saveAddressViewController
+        case listAddressSaveViewController
         
         /// `Section SearchFeature`
         
@@ -56,6 +57,10 @@ final class DemoUI {
                 return "AdditionalInfoSignInViewController"
             case .recoveryPassViewController:
                 return "RecoveryPassViewController"
+            case .saveAddressViewController:
+                return "SaveAddressViewController"
+            case .listAddressSaveViewController:
+                return "ListAddressSaveViewController"
             }
         }
         
@@ -79,6 +84,10 @@ final class DemoUI {
                 return AdditionalInfoSignInViewController()
             case .recoveryPassViewController:
                 return RecoveryPassViewController()
+            case .saveAddressViewController:
+                return SaveAddressViewController()
+            case .listAddressSaveViewController:
+                return ListAddressSaveViewController()
             }
         }
         
@@ -102,7 +111,10 @@ final class DemoUI {
             .recoveryPassViewController,
          ]
         ),
-        (.feedFeature, []),
+        (.feedFeature, [
+            .saveAddressViewController,
+            .listAddressSaveViewController
+        ]),
         (.searchFeature, []),
     ]
 }
