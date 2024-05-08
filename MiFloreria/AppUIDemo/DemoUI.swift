@@ -31,6 +31,7 @@ final class DemoUI {
         case verifyCodeViewController
         case additionalInformationViewController
         case recoveryPassViewController
+        case exampleViewController
         
         /// `Section FeedFeature`
         case saveAddressViewController
@@ -61,6 +62,8 @@ final class DemoUI {
                 return "SaveAddressViewController"
             case .listAddressSaveViewController:
                 return "ListAddressSaveViewController"
+            case .exampleViewController:
+                return "ExampleViewController"
             }
         }
         
@@ -88,6 +91,8 @@ final class DemoUI {
                 return SaveAddressViewController()
             case .listAddressSaveViewController:
                 return ListAddressSaveViewController()
+            case .exampleViewController:
+                return ExampleViewController()
             }
         }
         
@@ -109,6 +114,7 @@ final class DemoUI {
             .verifyCodeViewController,
             .additionalInformationViewController,
             .recoveryPassViewController,
+            .exampleViewController
          ]
         ),
         (.feedFeature, [

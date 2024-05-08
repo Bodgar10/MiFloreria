@@ -59,12 +59,11 @@ final class DSLineTF: UIView {
     
     private func setupUI() {
         textField.delegate = self
-        
         addSubview(mainStackView)
         mainStackView.addArrangedSubview(textField)
         mainStackView.addArrangedSubview(lineBaseView)
         
-        lineBaseView.pinSize(to: CGSize(width: mainStackView.frame.width, height: 1))
+        lineBaseView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         mainStackView
             .pinCenter(to: self)
             .pin(.leading, to: self, spacing: .zero)

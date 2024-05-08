@@ -24,7 +24,6 @@ class DemoTextFieldWithLineViewController: UIViewController {
         view.addSubview(textFieldWithLine)
         
         textFieldWithLine
-            .pinSize(to: CGSize(width: 0, height: 50))
             .pinCenter(to: view)
             .pin(.leading, to: view, spacing: .xLarge)
             .pin(.trailing, to: view, spacing: -.xLarge)
