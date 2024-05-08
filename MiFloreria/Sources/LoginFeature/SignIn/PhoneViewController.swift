@@ -152,7 +152,7 @@ final class PhoneViewController : MainViewController {
         
         lineBaseView.heightAnchor.constraint(equalToConstant: 1).isActive = true
        
-       nextButton
+        nextButton
            .pin(.top, yAnchor: lineBaseView.bottomAnchor, spacing: .medium)
            .pin(.centerX, to: view)
            .pinSize(to: CGSize(width: 100, height: 45))

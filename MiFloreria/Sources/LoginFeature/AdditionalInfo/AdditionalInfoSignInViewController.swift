@@ -168,15 +168,16 @@ final class AdditionalInfoSignInViewController: MainViewController {
         fullNameStackView.addArrangedSubview(lastNameTextField)
         
         titleLabel
-            .pin(.top, to: view.layoutMarginsGuide, spacing: .xLarge)
-            .pin(.leading, to: view.layoutMarginsGuide, spacing: .medium)
-            .pin(.trailing, to: view.layoutMarginsGuide, spacing: -.medium)
+            .pin(.top, to: view.safeAreaLayoutGuide, spacing: .xLarge)
+            .pin(.leading, to: view.safeAreaLayoutGuide, spacing: .medium)
+            .pin(.trailing, to: view.safeAreaLayoutGuide, spacing: -.medium)
         
         mainStackView
-            .pinSize(to: CGSize(width: 0, height: view.frame.height * 0.30))
-            .pin(.top, yAnchor: titleLabel.bottomAnchor, offset: 50)
+            .pin(.top, yAnchor: titleLabel.bottomAnchor, spacing: .medium)
             .pin(.trailing, to: view, spacing: -.xLarge)
             .pin(.leading, to: view, spacing: .xLarge)
+        
+        mainStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
         
         signInButton
             .pin(.centerX, to: view.centerXAnchor)
