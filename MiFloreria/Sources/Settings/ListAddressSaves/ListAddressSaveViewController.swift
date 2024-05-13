@@ -45,21 +45,16 @@ class ListAddressSaveViewController : UIViewController {
         return label
     }()
     
-    private lazy var addAddressButton : UIButton = {
-       let button = UIButton()
+    private lazy var addAddressButton : UIImageView = {
+       let button = UIImageView()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("+", for: .normal)
-        button.setTitleColor(UIColor.blue, for: .normal)
-        button.layer.cornerRadius = 15
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.blue.cgColor
+        button.image = UIImage(named: "add.blue.icon")
         return button
     }()
     
     private var listAddressTable: UITableView = {
        let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.backgroundColor = .red
         return table
     }()
     
@@ -86,17 +81,20 @@ class ListAddressSaveViewController : UIViewController {
         titleAddressLabel
             .pin(.top, to: view.safeAreaLayoutGuide, constant: 15)
             .pin(.centerX, to: view.centerXAnchor)
-
+        
         addressStack
             .pin(.top, yAnchor: titleAddressLabel.bottomAnchor, spacing: .small)
-            .pin(.leading, to: view, constant: 10)
-            .pin(.trailing, to: view, constant: -10)
-
+            .pin(.leading, to: view, constant: 20)
+            .pin(.trailing, to: view, constant: -20)
+        
         listAddressTable
             .pin(.top, yAnchor: addressStack.bottomAnchor, spacing: .small)
             .pin(.leading, to: view, constant: 10)
             .pin(.trailing, to: view, constant: -10)
-            .pin(.bottom, to: view)
+            .pin(.bottom, to: view, constant: -10)
+        
+        addAddressButton
+        .pinSize(to:CGSize(width: 25, height: 25))
 
     }
 }
@@ -110,16 +108,40 @@ struct ListPreviewAddressSaveViewController : PreviewProvider {
 
 extension ListAddressSaveViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = listAddressTable.dequeueReusableCell(withIdentifier: "AddressViewCell", for: indexPath) as? AddressViewCell else {
             return UITableViewCell()
+            
         }
+        let trashButton = UIButton(type: .custom)
+        trashButton.setImage(UIImage(named: "trash.fill"), for: .normal)
+        trashButton.setTitle("", for: .normal)
+        cell.editingAccessoryView = trashButton
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 120
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+            -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+                completionHandler(true)
+            }
+            deleteAction.image = UIImage(systemName: "trash.fill")
+            deleteAction.backgroundColor = .systemRed
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            return configuration
+    }
+    
+    func tableView(_ tableView: UITableView, viewForSeparatorInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        return view
+    }
+
 }

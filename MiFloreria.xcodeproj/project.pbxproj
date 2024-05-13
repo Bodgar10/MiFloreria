@@ -123,16 +123,12 @@
 		87FD9F482B8EC56900C4D23E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD9F462B8EC56900C4D23E /* UserInfo.swift */; };
 		87FD9F4A2B8ECE4600C4D23E /* AdditionalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD9F492B8ECE4600C4D23E /* AdditionalInfoViewModel.swift */; };
 		87FD9F4B2B8ECE4600C4D23E /* AdditionalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD9F492B8ECE4600C4D23E /* AdditionalInfoViewModel.swift */; };
-		B919E9432BE5DD05002F09E7 /* SaveAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B908B02BCCBBAA00DBD985 /* SaveAddressView.swift */; };
-		B919E9442BE5DD07002F09E7 /* SaveAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B908B22BCCBBB900DBD985 /* SaveAddressViewModel.swift */; };
 		B919E9472BE5DD3A002F09E7 /* ListAddressSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919E9462BE5DD3A002F09E7 /* ListAddressSaveViewController.swift */; };
 		B919E9482BE5EB1C002F09E7 /* ListAddressSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919E9462BE5DD3A002F09E7 /* ListAddressSaveViewController.swift */; };
 		B92ED9422B6C857300BA682B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92ED9412B6C857300BA682B /* PhoneViewController.swift */; };
 		B92ED9432B6C89A200BA682B /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92ED9412B6C857300BA682B /* PhoneViewController.swift */; };
 		B995FCBC2BDB7540001D94B7 /* SaveAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B908AE2BCCBB6C00DBD985 /* SaveAddressViewController.swift */; };
 		B9B908AF2BCCBB6C00DBD985 /* SaveAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B908AE2BCCBB6C00DBD985 /* SaveAddressViewController.swift */; };
-		B9B908B12BCCBBAA00DBD985 /* SaveAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B908B02BCCBBAA00DBD985 /* SaveAddressView.swift */; };
-		B9B908B32BCCBBB900DBD985 /* SaveAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B908B22BCCBBB900DBD985 /* SaveAddressViewModel.swift */; };
 		B9F650AE2BE85F9B0043BFFF /* VCPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F650AD2BE85F9B0043BFFF /* VCPreview.swift */; };
 		B9F650AF2BE863C90043BFFF /* VCPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F650AD2BE85F9B0043BFFF /* VCPreview.swift */; };
 		B9F650B12BE86D350043BFFF /* AddressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F650B02BE86D350043BFFF /* AddressViewCell.swift */; };
@@ -182,8 +178,6 @@
 		B919E9462BE5DD3A002F09E7 /* ListAddressSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAddressSaveViewController.swift; sourceTree = "<group>"; };
 		B92ED9412B6C857300BA682B /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		B9B908AE2BCCBB6C00DBD985 /* SaveAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAddressViewController.swift; sourceTree = "<group>"; };
-		B9B908B02BCCBBAA00DBD985 /* SaveAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAddressView.swift; sourceTree = "<group>"; };
-		B9B908B22BCCBBB900DBD985 /* SaveAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAddressViewModel.swift; sourceTree = "<group>"; };
 		B9F650AD2BE85F9B0043BFFF /* VCPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPreview.swift; sourceTree = "<group>"; };
 		B9F650B02BE86D350043BFFF /* AddressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -434,8 +428,6 @@
 		B919E9422BE5DCE1002F09E7 /* SaveAddress */ = {
 			isa = PBXGroup;
 			children = (
-				B9B908B22BCCBBB900DBD985 /* SaveAddressViewModel.swift */,
-				B9B908B02BCCBBAA00DBD985 /* SaveAddressView.swift */,
 				B9B908AE2BCCBB6C00DBD985 /* SaveAddressViewController.swift */,
 			);
 			path = SaveAddress;
@@ -633,7 +625,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B919E9432BE5DD05002F09E7 /* SaveAddressView.swift in Sources */,
 				87A968A82B59F7DF00FF54B9 /* DemoTableViewController.swift in Sources */,
 				B919E9482BE5EB1C002F09E7 /* ListAddressSaveViewController.swift in Sources */,
 				87289C082BDB4D43008317AB /* ExampleViewController.swift in Sources */,
@@ -665,7 +656,6 @@
 				B9F650AF2BE863C90043BFFF /* VCPreview.swift in Sources */,
 				87FD9F482B8EC56900C4D23E /* UserInfo.swift in Sources */,
 				871E7AB82B8FD6B300350C41 /* ContentView.swift in Sources */,
-				B919E9442BE5DD07002F09E7 /* SaveAddressViewModel.swift in Sources */,
 				B995FCBC2BDB7540001D94B7 /* SaveAddressViewController.swift in Sources */,
 				87C8A1E42B9ABD01009D553B /* RecoveryPassViewController.swift in Sources */,
 				873DDD2E2B6341B8003D026A /* HomeViewController.swift in Sources */,
@@ -678,7 +668,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9B908B12BCCBBAA00DBD985 /* SaveAddressView.swift in Sources */,
 				87E006832B576A9C000DE097 /* DemoTableViewController.swift in Sources */,
 				87289C072BDB4D43008317AB /* ExampleViewController.swift in Sources */,
 				870FC1492B980A220059A89A /* AdditionalInfoAnalytics.swift in Sources */,
@@ -710,7 +699,6 @@
 				B9F650AE2BE85F9B0043BFFF /* VCPreview.swift in Sources */,
 				87A968BF2B5A08E700FF54B9 /* Extension+UIControl.swift in Sources */,
 				87FD9F472B8EC56900C4D23E /* UserInfo.swift in Sources */,
-				B9B908B32BCCBBB900DBD985 /* SaveAddressViewModel.swift in Sources */,
 				871E7AB72B8FD6B300350C41 /* ContentView.swift in Sources */,
 				87C8A1E32B9ABD01009D553B /* RecoveryPassViewController.swift in Sources */,
 				873DDD2D2B6341A5003D026A /* HomeViewController.swift in Sources */,
