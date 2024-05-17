@@ -9,6 +9,13 @@ import UIKit
 
 class AddressViewCell: UITableViewCell {
 
+    private var separeCell: UIView = {
+       let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+    
     private var nameAddressTitleLabel : UILabel = {
       let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +28,7 @@ class AddressViewCell: UITableViewCell {
     private var addressStackView : UIStackView = {
        let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
+        stack.axis = .vertical
         stack.distribution = .fillProportionally
         return stack
     }()
@@ -34,11 +41,12 @@ class AddressViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var showAddressButton : UIImageView = {
-        let button = UIImageView()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.image = UIImage(named: "right.red")
-        return button
+    private lazy var showAddressImageView : UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "right.red")
+        image.contentMode = .scaleAspectFit
+        return image
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -56,28 +64,29 @@ class AddressViewCell: UITableViewCell {
         self.layer.shadowOpacity = 0.5
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.layer.shadowRadius = 4
-        self.layer.masksToBounds = false 
-        contentView.addSubview(nameAddressTitleLabel)
+        self.layer.masksToBounds = false
         contentView.addSubview(addressStackView)
+        addressStackView.addArrangedSubview(nameAddressTitleLabel)
         addressStackView.addArrangedSubview(addressLabel)
-        addressStackView.addArrangedSubview(showAddressButton)
+        contentView.addSubview(showAddressImageView)
+        //contentView.addSubview(separeCell)
         constraintUI()
     }
     
     func constraintUI(){
-        nameAddressTitleLabel
-            .pin(.top, to: contentView, spacing: .small)
-            .pin(.leading, to:contentView, constant: 5)
-            .pin(.trailing, to: contentView, constant: -5)
-        nameAddressTitleLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2).isActive = true
         
         addressStackView
-            .pin(.top, yAnchor: nameAddressTitleLabel.bottomAnchor ,spacing: .medium)
+            .pin(.top, yAnchor: contentView.topAnchor ,spacing: .zero)
             .pin(.leading, to: contentView, constant: 5)
-            .pin(.trailing, to: contentView, constant: -5)
             .pin(.bottom, yAnchor: contentView.bottomAnchor, spacing: .zero)
-        
-        showAddressButton.widthAnchor.constraint(equalTo: addressStackView.widthAnchor, multiplier: 0.2).isActive = true
+        addressStackView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
+        showAddressImageView
+            .pin(.top, yAnchor: contentView.topAnchor, spacing: .xLarge)
+            .pin(.leading, to: addressStackView.trailingAnchor)
+            .pin(.trailing, to: contentView.trailingAnchor, spacing: .small)
+            
+        showAddressImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2).isActive = true
+        showAddressImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.2).isActive = true
         
     }
 }

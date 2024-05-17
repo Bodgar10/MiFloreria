@@ -124,7 +124,7 @@ extension ListAddressSaveViewController : UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 150
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
@@ -136,12 +136,6 @@ extension ListAddressSaveViewController : UITableViewDelegate, UITableViewDataSo
             deleteAction.backgroundColor = .systemRed
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
             return configuration
-    }
-    
-    func tableView(_ tableView: UITableView, viewForSeparatorInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        return view
     }
 
 }
