@@ -60,7 +60,8 @@ class ListAddressSaveViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .dsBackground
+        listAddressTable.backgroundColor = .dsBackground
         listAddressTable.delegate = self
         listAddressTable.dataSource = self
         listAddressTable.register(AddressViewCell.self, forCellReuseIdentifier: "AddressViewCell")
@@ -89,8 +90,8 @@ class ListAddressSaveViewController : UIViewController {
         
         listAddressTable
             .pin(.top, yAnchor: addressStack.bottomAnchor, spacing: .small)
-            .pin(.leading, to: view, constant: 10)
-            .pin(.trailing, to: view, constant: -10)
+            .pin(.leading, to: view, spacing: .zero)
+            .pin(.trailing, to: view, spacing: .zero)
             .pin(.bottom, to: view, constant: -10)
         
         addAddressButton
@@ -124,7 +125,7 @@ extension ListAddressSaveViewController : UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 100
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProjectUI
 
 class AddressViewCell: UITableViewCell {
 
@@ -29,6 +30,7 @@ class AddressViewCell: UITableViewCell {
        let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
+        stack.spacing = Spacing.small.rawValue
         stack.distribution = .fillProportionally
         return stack
     }()
@@ -65,6 +67,7 @@ class AddressViewCell: UITableViewCell {
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.layer.shadowRadius = 4
         self.layer.masksToBounds = false
+        self.backgroundColor = .white
         contentView.addSubview(addressStackView)
         addressStackView.addArrangedSubview(nameAddressTitleLabel)
         addressStackView.addArrangedSubview(addressLabel)
@@ -76,14 +79,12 @@ class AddressViewCell: UITableViewCell {
     func constraintUI(){
         
         addressStackView
-            .pin(.top, yAnchor: contentView.topAnchor ,spacing: .zero)
-            .pin(.leading, to: contentView, constant: 5)
-            .pin(.bottom, yAnchor: contentView.bottomAnchor, spacing: .zero)
+            .pin(.top, to: contentView, spacing: .medium)
+            .pin(.leading, to: contentView, spacing: .small)
         addressStackView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.7).isActive = true
         showAddressImageView
-            .pin(.top, yAnchor: contentView.topAnchor, spacing: .xLarge)
-            .pin(.leading, to: addressStackView.trailingAnchor)
             .pin(.trailing, to: contentView.trailingAnchor, spacing: .small)
+            .pin(.centerY, yAnchor: contentView.centerYAnchor)
             
         showAddressImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2).isActive = true
         showAddressImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.2).isActive = true
