@@ -275,16 +275,14 @@ final class SaveAddressViewController : UIViewController {
     
     fileprivate func contraintsUI(){
 
-        
         stackAddress
-            .pin(.top, to:view.safeAreaLayoutGuide)
+            .pin(.top, to:view.safeAreaLayoutGuide, constant: 15)
             .pin(.leading, to: view ,constant: 15)
             .pin(.trailing, to: view, constant: -15)
-            .pinSize(to: 540)
-        
+            .pin(.bottom, yAnchor: buttonSave.topAnchor, offset: -35)
         
         buttonSave
-            .pin(.top, yAnchor: stackAddress.bottomAnchor, spacing: .medium)
+            .pin(.bottom, to: view.safeAreaLayoutGuide, constant: -20)
             .pin(.centerX, to: stackAddress)
             .pinSize(to: CGSize(width: 200, height: 50))
 
